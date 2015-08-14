@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */; };
 		0359A1241B7E4BE700C2DC32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1231B7E4BE700C2DC32 /* ViewController.swift */; };
-		0359A1271B7E4BE700C2DC32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1251B7E4BE700C2DC32 /* Main.storyboard */; };
 		0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
 		0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */; };
 		0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */; };
 		0359A1421B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */; };
+		03D59C081B7E4CD7008A1FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C071B7E4CD7008A1FE0 /* Main.storyboard */; };
+		03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
+		03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */; };
+		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
+		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +36,33 @@
 			remoteGlobalIDString = 0359A11D1B7E4BE700C2DC32;
 			remoteInfo = "InstaClip Player";
 		};
+		03D59C181B7E4E01008A1FE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0359A1161B7E4BE700C2DC32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D59C0F1B7E4E01008A1FE0;
+			remoteInfo = "InstaClip Share";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		03D59C1E1B7E4E02008A1FE0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InstaClip Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0359A1231B7E4BE700C2DC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0359A1261B7E4BE700C2DC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0359A1281B7E4BE700C2DC32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0359A12B1B7E4BE700C2DC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0359A12D1B7E4BE700C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +72,13 @@
 		0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_PlayerUITests.swift; sourceTree = "<group>"; };
 		0359A1431B7E4BE800C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D59C071B7E4CD7008A1FE0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = developing_perspective_224.mp3; sourceTree = "<group>"; };
+		03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InstaClip Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		03D59C171B7E4E01008A1FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
+		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03D59C0D1B7E4E01008A1FE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,7 +119,9 @@
 				0359A1201B7E4BE700C2DC32 /* InstaClip Player */,
 				0359A1351B7E4BE800C2DC32 /* InstaClip PlayerTests */,
 				0359A1401B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
+				03D59C111B7E4E01008A1FE0 /* InstaClip Share */,
 				0359A11F1B7E4BE700C2DC32 /* Products */,
+				03D59C0B1B7E4D25008A1FE0 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +131,7 @@
 				0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */,
 				0359A1321B7E4BE800C2DC32 /* InstaClip PlayerTests.xctest */,
 				0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */,
+				03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +141,7 @@
 			children = (
 				0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */,
 				0359A1231B7E4BE700C2DC32 /* ViewController.swift */,
-				0359A1251B7E4BE700C2DC32 /* Main.storyboard */,
+				03D59C071B7E4CD7008A1FE0 /* Main.storyboard */,
 				0359A1281B7E4BE700C2DC32 /* Assets.xcassets */,
 				0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */,
 				0359A12D1B7E4BE700C2DC32 /* Info.plist */,
@@ -125,6 +167,25 @@
 			path = "InstaClip PlayerUITests";
 			sourceTree = "<group>";
 		};
+		03D59C0B1B7E4D25008A1FE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03D59C111B7E4E01008A1FE0 /* InstaClip Share */ = {
+			isa = PBXGroup;
+			children = (
+				03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */,
+				03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */,
+				03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */,
+				03D59C171B7E4E01008A1FE0 /* Info.plist */,
+			);
+			path = "InstaClip Share";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,10 +196,12 @@
 				0359A11A1B7E4BE700C2DC32 /* Sources */,
 				0359A11B1B7E4BE700C2DC32 /* Frameworks */,
 				0359A11C1B7E4BE700C2DC32 /* Resources */,
+				03D59C1E1B7E4E02008A1FE0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				03D59C191B7E4E01008A1FE0 /* PBXTargetDependency */,
 			);
 			name = "InstaClip Player";
 			productName = "InstaClip Player";
@@ -181,6 +244,23 @@
 			productReference = 0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03D59C1B1B7E4E02008A1FE0 /* Build configuration list for PBXNativeTarget "InstaClip Share" */;
+			buildPhases = (
+				03D59C0C1B7E4E01008A1FE0 /* Sources */,
+				03D59C0D1B7E4E01008A1FE0 /* Frameworks */,
+				03D59C0E1B7E4E01008A1FE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InstaClip Share";
+			productName = "InstaClip Share";
+			productReference = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,6 +281,9 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 0359A11D1B7E4BE700C2DC32;
 					};
+					03D59C0F1B7E4E01008A1FE0 = {
+						CreatedOnToolsVersion = 7.0;
+					};
 				};
 			};
 			buildConfigurationList = 0359A1191B7E4BE700C2DC32 /* Build configuration list for PBXProject "InstaClip Player" */;
@@ -219,6 +302,7 @@
 				0359A11D1B7E4BE700C2DC32 /* InstaClip Player */,
 				0359A1311B7E4BE800C2DC32 /* InstaClip PlayerTests */,
 				0359A13C1B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
+				03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */,
 			);
 		};
 /* End PBXProject section */
@@ -228,9 +312,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D59C081B7E4CD7008A1FE0 /* Main.storyboard in Resources */,
+				03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */,
 				0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */,
 				0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */,
-				0359A1271B7E4BE700C2DC32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +330,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03D59C0E1B7E4E01008A1FE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +369,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03D59C0C1B7E4E01008A1FE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */,
+				03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,17 +391,14 @@
 			target = 0359A11D1B7E4BE700C2DC32 /* InstaClip Player */;
 			targetProxy = 0359A13E1B7E4BE800C2DC32 /* PBXContainerItemProxy */;
 		};
+		03D59C191B7E4E01008A1FE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */;
+			targetProxy = 03D59C181B7E4E01008A1FE0 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0359A1251B7E4BE700C2DC32 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0359A1261B7E4BE700C2DC32 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -398,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player";
@@ -409,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player";
@@ -464,6 +565,28 @@
 			};
 			name = Release;
 		};
+		03D59C1C1B7E4E02008A1FE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "InstaClip Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		03D59C1D1B7E4E02008A1FE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "InstaClip Share/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -483,6 +606,7 @@
 				0359A1481B7E4BE800C2DC32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0359A1491B7E4BE800C2DC32 /* Build configuration list for PBXNativeTarget "InstaClip PlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -491,12 +615,22 @@
 				0359A14B1B7E4BE800C2DC32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0359A14C1B7E4BE800C2DC32 /* Build configuration list for PBXNativeTarget "InstaClip PlayerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0359A14D1B7E4BE800C2DC32 /* Debug */,
 				0359A14E1B7E4BE800C2DC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03D59C1B1B7E4E02008A1FE0 /* Build configuration list for PBXNativeTarget "InstaClip Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03D59C1C1B7E4E02008A1FE0 /* Debug */,
+				03D59C1D1B7E4E02008A1FE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

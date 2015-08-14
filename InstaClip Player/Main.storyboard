@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="emJ-xF-1g3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <scenes>
+        <!--ClipCaster-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaClip_Player" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDX-2r-nla">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playPauseButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbg-ro-eDN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PDX-2r-nla" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sCv-4t-YEA"/>
+                            <constraint firstItem="PDX-2r-nla" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zwC-fw-0ek"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="ClipCaster" id="G0s-Nv-D9K">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="9Co-Kw-bLo">
+                            <connections>
+                                <action selector="shareButtonPress:" destination="BYZ-38-t0r" id="XgB-Tw-Vtf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playPauseButton" destination="PDX-2r-nla" id="15m-bP-Nww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103" y="492"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LCz-SN-uQ5">
+            <objects>
+                <navigationController id="emJ-xF-1g3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qmo-bH-GGb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="adh-it-Eng"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojm-o2-2qK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="492"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play" width="50" height="50"/>
+    </resources>
+</document>
