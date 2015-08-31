@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if let splitViewController = self.window?.rootViewController as? SplitViewController {
+            if let navigationController = splitViewController.viewControllers.last as? UINavigationController {
+                if let showTableViewController = navigationController.topViewController  as? ShowTableViewController {
+                    showTableViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+                    showTableViewController.navigationItem.leftItemsSupplementBackButton = true
+                }
+            }
+        }
+        
         return true
     }
 
@@ -41,6 +50,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, shouldSaveApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
+    
+    func application(application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
+        return true
+    }
 
+    func application(application: UIApplication, didDecodeRestorableStateWithCoder coder: NSCoder) {
+    }
 }
 

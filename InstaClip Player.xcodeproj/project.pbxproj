@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0358004E1B8112810028247D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358004D1B8112810028247D /* Main.storyboard */; };
 		0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */; };
-		0359A1241B7E4BE700C2DC32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1231B7E4BE700C2DC32 /* ViewController.swift */; };
 		0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
 		0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */; };
 		0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */; };
 		0359A1421B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */; };
-		03D59C081B7E4CD7008A1FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C071B7E4CD7008A1FE0 /* Main.storyboard */; };
+		03650CC11B810B6D004E5863 /* ShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03650CC01B810B6D004E5863 /* ShowTableViewController.swift */; };
+		037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D87A81B8289F6003A5E6A /* SplitViewController.swift */; };
+		03ABC48A1B7E8A1300E258E3 /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
+		03B3FCFC1B7FDF0B004D6265 /* PodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */; };
+		03BA73E61B7E5DA700F4916F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03BA73E51B7E5DA700F4916F /* README.md */; };
+		03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E191B8B84180057E702 /* PlayerModel.swift */; };
+		03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E1D1B8B86050057E702 /* PlayerView.swift */; };
 		03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */; };
 		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
+		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
+		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +68,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0358004D1B8112810028247D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InstaClip Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0359A1231B7E4BE700C2DC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0359A1281B7E4BE700C2DC32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0359A12B1B7E4BE700C2DC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0359A12D1B7E4BE700C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,13 +80,21 @@
 		0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_PlayerUITests.swift; sourceTree = "<group>"; };
 		0359A1431B7E4BE800C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D59C071B7E4CD7008A1FE0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		03650CC01B810B6D004E5863 /* ShowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTableViewController.swift; sourceTree = "<group>"; };
+		037D87A81B8289F6003A5E6A /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMedia.swift; sourceTree = "<group>"; };
+		03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewController.swift; sourceTree = "<group>"; };
+		03BA73E51B7E5DA700F4916F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		03BB2E191B8B84180057E702 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		03BB2E1D1B8B86050057E702 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = developing_perspective_224.mp3; sourceTree = "<group>"; };
 		03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InstaClip Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		03D59C171B7E4E01008A1FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		03EEAE2B1B90B70900333EEF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +156,15 @@
 			isa = PBXGroup;
 			children = (
 				0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */,
-				0359A1231B7E4BE700C2DC32 /* ViewController.swift */,
-				03D59C071B7E4CD7008A1FE0 /* Main.storyboard */,
+				03EEAE2B1B90B70900333EEF /* Utils.swift */,
+				037D87A81B8289F6003A5E6A /* SplitViewController.swift */,
+				03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */,
+				03BB2E1D1B8B86050057E702 /* PlayerView.swift */,
+				03650CC01B810B6D004E5863 /* ShowTableViewController.swift */,
+				03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */,
+				03BB2E191B8B84180057E702 /* PlayerModel.swift */,
+				03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */,
+				0358004D1B8112810028247D /* Main.storyboard */,
 				0359A1281B7E4BE700C2DC32 /* Assets.xcassets */,
 				0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */,
 				0359A12D1B7E4BE700C2DC32 /* Info.plist */,
@@ -170,6 +193,7 @@
 		03D59C0B1B7E4D25008A1FE0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03BA73E51B7E5DA700F4916F /* README.md */,
 				03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */,
 			);
 			name = "Supporting Files";
@@ -272,6 +296,11 @@
 				TargetAttributes = {
 					0359A11D1B7E4BE700C2DC32 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0359A1311B7E4BE800C2DC32 = {
 						CreatedOnToolsVersion = 7.0;
@@ -312,10 +341,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D59C081B7E4CD7008A1FE0 /* Main.storyboard in Resources */,
 				03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */,
 				0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */,
 				0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */,
+				0358004E1B8112810028247D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0359A1241B7E4BE700C2DC32 /* ViewController.swift in Sources */,
+				03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */,
+				03650CC11B810B6D004E5863 /* ShowTableViewController.swift in Sources */,
+				03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */,
+				03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */,
+				03BA73E61B7E5DA700F4916F /* README.md in Sources */,
+				03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */,
+				037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */,
 				0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */,
+				03B3FCFC1B7FDF0B004D6265 /* PodcastTableViewController.swift in Sources */,
+				03ABC48A1B7E8A1300E258E3 /* PodcastMedia.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +670,7 @@
 				03D59C1D1B7E4E02008A1FE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

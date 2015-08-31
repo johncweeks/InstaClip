@@ -35,11 +35,11 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
             for extensionItem in inputItems     {
                 if let attachments = extensionItem.attachments as? [NSItemProvider] {
                     for itemProvider in attachments {
-                        if itemProvider.hasItemConformingToTypeIdentifier(String(kUTTypeFileURL)) {
-                            itemProvider.loadItemForTypeIdentifier(String(kUTTypeFileURL), options: nil, completionHandler: { (data :NSSecureCoding?, error :NSError!) -> Void in
+                        if itemProvider.hasItemConformingToTypeIdentifier(String(kUTTypeURL)) { //kUTTypeFileURL
+                            itemProvider.loadItemForTypeIdentifier(String(kUTTypeURL), options: nil, completionHandler: { (data :NSSecureCoding?, error :NSError!) -> Void in
                                 guard let podcastURL = data as? NSURL else {
                                     // if cast fails docs guarantee error object exists so implicit unwrapped optional succeeds
-                                    self.showAlertWithTitle("Could not load \(String(kUTTypeFileURL))", message: error.localizedDescription)
+                                    self.showAlertWithTitle("Could not load \(String(kUTTypeURL))", message: error.localizedDescription)
                                     return
                                 }
                                 self.podcastURL = podcastURL

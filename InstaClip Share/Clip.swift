@@ -6,6 +6,9 @@
 //  Copyright © 2015 Moonrise Software. All rights reserved.
 //
 
+// TODO: checkout AVAssetExportSession, possibly simpler
+// TODO: clip from streaming media??
+
 import Foundation
 import AVFoundation
 
