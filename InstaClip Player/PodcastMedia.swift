@@ -246,21 +246,7 @@ class PodcastMedia {
         }
         return UIImage(named:"radiowaves")
     }
-    
-//    func showForShowURL(showURL: NSURL) -> (podcast: MPMediaItemCollection?, index: Int)? {
-//        guard hasPodcastItemCollections() else {
-//            return nil
-//        }
-//        for podcast in podcastQuery.collections! {
-//            for index in 0..<podcast.items.count {
-//                if showURL == PodcastMedia.showURLForPodcast(podcast, withIndex: index) {
-//                    return (podcast, index)
-//                }
-//            }
-//        }
-//        return nil
-//    }
-    
+        
     func showMediaItemForShowURL(showURL: NSURL) -> MPMediaItem? {
         guard hasPodcastItemCollections() else {
             return nil
