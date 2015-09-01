@@ -24,7 +24,7 @@ func calcProgress(divisor divisor: CMTime?, dividend: CMTime?) -> Float {
 // Model of the Views: PlayerView & iOS lock screen
 // One should exist at all times so make it a singleton
 
-class PlayerViewModel: NSObject { //, PlayerModelDelegate
+class PlayerViewModel: NSObject {
     
     static let sharedInstance = PlayerViewModel()
 
@@ -68,8 +68,6 @@ class PlayerViewModel: NSObject { //, PlayerModelDelegate
     
     private override init() {   // prevent others from using the singleton's default initializer
         super.init()
-
-        //PlayerModel.sharedInstance.delegate = self
 
         if let showURL = PlayerModel.sharedInstance.showURL, showMediaItem = PodcastMedia.sharedInstance.showMediaItemForShowURL(showURL) {
             setShowMediaItemDuringInit(showMediaItem)

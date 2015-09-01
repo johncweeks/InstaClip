@@ -18,8 +18,6 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
         self.clearsSelectionOnViewWillAppear = false
         
         splitViewController!.delegate = self
-        
-        self.navigationItem.rightBarButtonItem?.title = "Now\nPlaying"
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,9 +66,7 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
                 if let showTableViewController = showNavigationController.topViewController as? ShowTableViewController {
                     showTableViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     showTableViewController.navigationItem.leftItemsSupplementBackButton = true
- //                   if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
                         showTableViewController.podcast =  PodcastMedia.sharedInstance.podcastForIndex(PodcastMedia.sharedInstance.podcastIndexForShowMediaItem(PlayerViewModel.sharedInstance.showMediaItem))
- //                   }
                 }
             }
             
@@ -88,26 +84,7 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
         return collapseDetailViewController
     }
-    
-    @IBAction func nowPlayingButtonPress(sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewControllerWithIdentifier("ShowTableViewControllerID") as? ShowTableViewController {
-            let showMediaItem = PlayerViewModel.sharedInstance.showMediaItem
-            //self.navigationController?.pushViewController(vc, animated: true)
-            if let splitViewController = self.splitViewController as? SplitViewController {
-                if let navigationController = splitViewController.viewControllers.last as? UINavigationController {
-                    if let _ = navigationController.topViewController {
-                        navigationController.popViewControllerAnimated(false)
-                    }
-                    print(navigationController.viewControllers.count)
-                    vc.podcast = PodcastMedia.sharedInstance.podcastForIndex(PodcastMedia.sharedInstance.podcastIndexForShowMediaItem(showMediaItem))
-                    navigationController.pushViewController(vc, animated: true)
-                }
-            }
-        }
-    }
-    
-    
+        
     // MARK: - UIDataSourceModelAssociation for state restoration
     
     func modelIdentifierForElementAtIndexPath(idx: NSIndexPath, inView view: UIView) -> String? {

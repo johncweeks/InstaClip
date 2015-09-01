@@ -40,7 +40,6 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         playerView = tableView.dequeueReusableCellWithIdentifier("PlayerViewReuseIdentifier") as? PlayerView
-        //playerView?.delegate = PlayerViewModel.sharedInstance
         playerView?.artWorkImageView.image = PodcastMedia.imageForPodcast(podcast)
         
         // is player active with a show for this podcast?
