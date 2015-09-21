@@ -9,256 +9,203 @@
 import Foundation
 import MediaPlayer
 
-// iPod Library is not available on simulators so hardcode one for testing
+// iPod Library is not available on iOS simulators so hardcode one for testing
 
 class PodcastMedia {
     
     static let sharedInstance = PodcastMedia()
     private init() {} // prevent others from using the default initializer
     
-    private let podcastQuery = MPMediaQuery.podcastsQuery()
-    
-    static func showCountForPodcast(podcast: MPMediaItemCollection?) -> Int {
-        guard podcast != nil else {
-            return 1
-        }
-        return podcast!.count
-        
-    }
-    
-    static func artworkForPodcast(podcast: MPMediaItemCollection?) -> MPMediaItemArtwork {
-        guard podcast != nil else {
-            return MPMediaItemArtwork(image: UIImage(named:"radiowaves")!)
-        }
-        if let representativeItem = podcast!.representativeItem {
-            if let artwork = representativeItem.valueForProperty(MPMediaItemPropertyArtwork) as? MPMediaItemArtwork {
-                return artwork
-            }
-        }
-        return  MPMediaItemArtwork(image: UIImage(named:"radiowaves")!)
-    }
+    let podcastQuery = MPMediaQuery.podcastsQuery()
+}
 
+extension MPMediaItem {
     
-    static func imageForPodcast(podcast: MPMediaItemCollection?) -> UIImage? {
-        guard podcast != nil else {
-            return UIImage(named:"radiowaves")
-        }
-        if let representativeItem = podcast!.representativeItem {
-            if let artwork = representativeItem.valueForProperty(MPMediaItemPropertyArtwork) as? MPMediaItemArtwork {
-                if let artworkImage = artwork.imageWithSize(CGSize(width: 50, height: 50)) {
-                    return artworkImage
-                }
-            }
-        }
-        return UIImage(named:"radiowaves")
-    }
-    
-    static func podcastTitleForPodcast(podcast: MPMediaItemCollection?) -> String {
-        guard podcast != nil else {
+    var podcastTitleValue: String {
+        guard podcastTitle != nil else {
             return "Developing Perspective"
         }
-        if let representativeItem = podcast!.representativeItem {
-            if let title = representativeItem.valueForProperty(MPMediaItemPropertyPodcastTitle) as? String {
-                return title
-            }
-        }
-        return ""
+        return podcastTitle!
     }
     
-    static func indexForShowInPodcast(podcast: MPMediaItemCollection?, withShowURL showURL: NSURL) -> Int? {
-        guard podcast != nil else {
-            return 0
-        }
-        for (index, _) in podcast!.items.enumerate() {
-            if showURL == showURLForPodcast(podcast, withIndex: index) {
-                return index
-            }
-        }
-        return nil
-    }
-    
-    static func showTitleForPodcast(podcast: MPMediaItemCollection?, withIndex index: Int) -> String {
-        guard podcast != nil else {
+    var showTitleValue: String {
+        guard title != nil else {
             return "#224: Unplanned Absence."
         }
-        if let title = podcast?.items[index].valueForProperty(MPMediaItemPropertyTitle) as? String {
-            return title
-        }
-        return ""
-    }
-    
-    static func showURLForPodcast(podcast: MPMediaItemCollection?, withIndex index: Int) -> NSURL? {
-        guard podcast != nil else {
-            return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")
-        }
-        return podcast?.items[index].valueForProperty(MPMediaItemPropertyAssetURL) as? NSURL
-    }
-    
-    static func showMediaItemForPodcast(podcast: MPMediaItemCollection?, withIndex index: Int) -> MPMediaItem? {
-        guard podcast != nil else {
-            return nil
-        }
-        return podcast?.items[index]
-    }
-    
-    static func indexForShowInPodcast(podcast: MPMediaItemCollection?, withShowMediaItem showMediaItem: MPMediaItem?) -> Int? {
-        guard podcast != nil && showMediaItem != nil else {
-            return 0
-        }
-        for (index, value) in podcast!.items.enumerate() {
-            if value == showMediaItem {
-                return index
-            }
-        }
-        
-        return nil
-    }
-    
-    static func showURLForShowMediaItem(showMediaItem: MPMediaItem?) -> NSURL? {
-        guard showMediaItem != nil else {
-            return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")
-        }
-        return showMediaItem?.valueForProperty(MPMediaItemPropertyAssetURL) as? NSURL
-    }
-    
-    static func podcastTitleForShowMediaItem(showMediaItem: MPMediaItem?) -> String {
-        guard showMediaItem != nil else {
-            return "Developing Perspective"
-        }
-        if let title = showMediaItem?.valueForProperty(MPMediaItemPropertyPodcastTitle) as? String {
-            return title
-        }
-        return ""
-    }
-    
-    static func showTitleForShowMediaItem(showMediaItem: MPMediaItem?) -> String {
-        guard showMediaItem != nil else {
-            return "#224: Unplanned Absence."
-        }
-        if let title = showMediaItem?.valueForProperty(MPMediaItemPropertyTitle) as? String {
-            return title
-        }
-        return ""
+        return title!
     }
 
-    static func artworkForShowMediaItem(showMediaItem: MPMediaItem?) -> MPMediaItemArtwork {
-        guard showMediaItem != nil else {
+    var mediaItemArtworkValue: MPMediaItemArtwork {
+        guard artwork != nil else {
             return MPMediaItemArtwork(image: UIImage(named:"radiowaves")!)
         }
-        if let artwork = showMediaItem?.valueForProperty(MPMediaItemPropertyArtwork) as? MPMediaItemArtwork {
-            return artwork
-        }
-        return  MPMediaItemArtwork(image: UIImage(named:"radiowaves")!)
-    }
-
-    private func hasPodcastItemCollections() -> Bool {
-        if let count = podcastQuery.collections?.count where count > 0 {
-            return true
-        } else {
-            return false
-        }
+        return artwork!
     }
     
-    private func podcastRepresentativeItemForIndex(index: Int) -> MPMediaItem? {
-        if let podcastItemCollection = podcastQuery.collections {
-            let podcastItem = podcastItemCollection[index]
-            if let representativeItem = podcastItem.representativeItem {
-                return representativeItem
-            }
+    var showURLValue: NSURL {
+        guard assetURL != nil else {
+            return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")!
         }
-        return nil
+        return assetURL!
     }
+}
 
-    func podcastCount() -> Int {
-        guard hasPodcastItemCollections() else {
+extension MPMediaItemCollection {
+    
+    var countValue: Int {
+        guard count > 0 else {
             return 1
         }
-        return podcastQuery.collections!.count
+        return count
     }
     
-    func podcastForIndex(index: Int) -> MPMediaItemCollection? {
-        guard hasPodcastItemCollections() else {
-            return nil
-        }
-        return podcastQuery.collections![index]
-    }
-    
-    func podcastForPodcastTitle(podcastTitle: String) -> MPMediaItemCollection? {
-        guard hasPodcastItemCollections() else {
-            return nil
-        }
-        for (index, _) in podcastQuery.collections!.enumerate() {
-            if podcastTitleForIndex(index) == podcastTitle {
-                return podcastForIndex(index)
-            }
-        }
-        return nil
-    }
-    
-    func podcastTitleForIndex(index: Int) -> String {
-        guard hasPodcastItemCollections() else {
+    var podcastTitleValue: String {
+        guard representativeItem != nil && representativeItem!.podcastTitle != nil else {
             return "Developing Perspective"
         }
-        if let representativeItem = podcastRepresentativeItemForIndex(index) {
-            if let title = representativeItem.valueForProperty(MPMediaItemPropertyPodcastTitle) as? String {
-                return title
-            }
-        }
-        return ""
+        return representativeItem!.podcastTitle!
     }
     
-    func podcastIndexForTitle(podcastTitle: String) -> Int {
-        guard hasPodcastItemCollections() else {
+    var artworkImageValue: UIImage! {
+        guard representativeItem != nil else {
+            return UIImage(named:"radiowaves")!
+        }
+        return representativeItem!.artwork?.imageWithSize(CGSize(width: 50, height: 50)) ?? UIImage(named:"radiowaves")!
+    }
+
+    func indexOfShowWithURL(showURL: NSURL) -> Int? {
+        guard count > 0 else {
             return 0
         }
-        for index in 0..<podcastQuery.collections!.count {
-            if podcastTitleForIndex(index) == podcastTitle {
+        for (index, show) in items.enumerate() {
+            if show.showURLValue == showURL {
                 return index
             }
         }
-        return 0
+        return nil
     }
     
-    func podcastIndexForShowMediaItem(showMediaItem: MPMediaItem?) -> Int {
-        guard showMediaItem != nil else {
+    func indexOfShow(show: MPMediaItem?) -> Int? {
+        guard count > 0 else {
             return 0
         }
-        for (index, podcast) in podcastQuery.collections!.enumerate() {
-            for show in podcast.items {
-                if show == showMediaItem {
-                    return  index
-                }
+        for (index, s) in items.enumerate() {
+            if s == show {
+                return index
             }
         }
-        return 0
+        return nil
     }
     
-    func podcastImageForIndex(index: Int) -> UIImage? {
-        guard hasPodcastItemCollections() else {
-            return UIImage(named:"radiowaves")
+    @nonobjc subscript(index: Int) -> MPMediaItem? {
+        get {
+            guard count > 0 && 0..<count ~= index else {
+                return MPMediaItem()
+            }
+            return items[index]
         }
-        if let representativeItem = podcastRepresentativeItemForIndex(index) {
-            if let artwork = representativeItem.valueForProperty(MPMediaItemPropertyArtwork) as? MPMediaItemArtwork {
-                if let artworkImage = artwork.imageWithSize(CGSize(width: 50, height: 50)) {
-                    return artworkImage
-                }
+    }
+
+    @nonobjc subscript(showTitle: String) -> MPMediaItem? {
+        guard count > 0 else {
+            return MPMediaItem()
+        }
+        for show in items {
+            if show.showTitleValue == showTitle {
+                return show
             }
         }
-        return UIImage(named:"radiowaves")
+        return nil
     }
-        
-    func showMediaItemForShowURL(showURL: NSURL) -> MPMediaItem? {
-        guard hasPodcastItemCollections() else {
+    
+    @nonobjc private subscript(showURL: NSURL) -> MPMediaItem? {
+        get {
+            guard count > 0 else {
+                return nil
+            }
+            for show in items {
+                if show.showURLValue == showURL {
+                    return show
+                }
+            }
             return nil
         }
-        for podcast in podcastQuery.collections! {
-            for (index, value) in podcast.items.enumerate() {
-                if showURL == PodcastMedia.showURLForPodcast(podcast, withIndex: index) {
-                    return value
+    }
+}
+
+extension MPMediaQuery {
+    
+    var countValue: Int {
+        guard collections != nil && collections!.count > 0 else {
+            return 1
+        }
+        return collections!.count
+    }
+    
+    func indexOfPodcastWithTitle(podcastTitle: String) -> Int? {
+        guard collections != nil && collections?.count > 0 else {
+            return 0
+        }
+        for (index, podcast) in collections!.enumerate() {
+            if podcast.podcastTitleValue == podcastTitle {
+                return index
+            }
+        }
+        return nil
+    }
+    
+    @nonobjc subscript(index: Int) ->  MPMediaItemCollection? {
+        get {
+            guard collections != nil && collections!.count > 0 && 0..<collections!.count ~= index else {
+                return MPMediaItemCollection(items: [])
+            }
+            if let mediaItemCollection = collections?[index] {
+                return mediaItemCollection
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    @nonobjc subscript(podcastTitle: String) -> MPMediaItemCollection? {
+        get {
+            guard collections != nil && collections?.count > 0 else {
+                return MPMediaItemCollection(items: [])
+            }
+            for mediaItemCollection in collections! {
+                if mediaItemCollection.podcastTitleValue == podcastTitle {
+                    return mediaItemCollection
+                }
+            }
+            return nil
+        }
+    }
+    
+    @nonobjc subscript(showURL: NSURL) -> MPMediaItem? {
+        get {
+            guard collections != nil && collections?.count > 0 else {
+                return  MPMediaItem()
+            }
+            for podcast in collections! {
+                if let show = podcast[showURL] {
+                    return show
+                }
+            }
+            return nil
+        }
+    }
+    
+    @nonobjc subscript(show: MPMediaItem) -> MPMediaItemCollection? {
+        guard collections != nil && collections?.count > 0 else {
+            return MPMediaItemCollection(items: [])
+        }
+        for podcast in collections! {
+            for s in podcast.items {
+                if s == show {
+                    return podcast
                 }
             }
         }
         return nil
     }
 }
-

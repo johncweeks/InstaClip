@@ -73,7 +73,7 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
     
     private func itemLoadComplete() {
         
-        guard let podcastURL=self.podcastURL, let startTimeCMT=self.startTimeCMT else {
+        guard let podcastURL=self.podcastURL, startTimeCMT=self.startTimeCMT else {
             // need both to make the clip
             return
         }

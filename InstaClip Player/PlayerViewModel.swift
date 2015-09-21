@@ -21,6 +21,23 @@ func calcProgress(divisor divisor: CMTime?, dividend: CMTime?) -> Float {
     return numerator / denomator
 }
 
+
+extension Dictionary {
+    func filterKeys(check: Key -> Bool) -> [Key: Value] {
+        var result = [Key: Value]()
+        for x in self  {
+            if check(x.0) {
+                print("keeping \(x.0)")
+                result[x.0] = x.1
+            } else {
+                print("DELETING \(x.0)")
+            }
+        }
+        return result
+    }
+}
+
+
 // Model of the Views: PlayerView & iOS lock screen
 // One should exist at all times so make it a singleton
 
@@ -32,19 +49,21 @@ class PlayerViewModel: NSObject {
     dynamic var progress: Float = 0.0
     dynamic var rate: Float = 0.0
     
-    var nowPlayingInfo: [String : AnyObject] = [:]
+    var nowPlayingInfo = [String : AnyObject]()
     
     var showMediaItem: MPMediaItem? {
         didSet {
-            if let showURL = PodcastMedia.showURLForShowMediaItem(showMediaItem) {
+            if let showURL = showMediaItem?.showURLValue {
                 if PlayerModel.sharedInstance.showURL != showURL {
                     PlayerModel.sharedInstance.showURL = showURL
                 }
-                nowPlayingInfo = [
-                    MPMediaItemPropertyTitle : PodcastMedia.showTitleForShowMediaItem(showMediaItem),
-                    MPMediaItemPropertyAlbumTitle : PodcastMedia.podcastTitleForShowMediaItem(showMediaItem),
-                    MPMediaItemPropertyArtwork : PodcastMedia.artworkForShowMediaItem(showMediaItem)
-                ]
+                if let show = showMediaItem {
+                    nowPlayingInfo = [
+                        MPMediaItemPropertyTitle : show.showTitleValue,
+                        MPMediaItemPropertyAlbumTitle : show.podcastTitleValue,
+                        MPMediaItemPropertyArtwork : show.mediaItemArtworkValue
+                    ]
+                }
                 if let player = PlayerModel.sharedInstance.player, currentItem = player.currentItem {
                     nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = NSNumber(double: CMTimeGetSeconds(player.currentTime()))
                     nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = NSNumber(double: CMTimeGetSeconds(currentItem.duration))
@@ -60,6 +79,7 @@ class PlayerViewModel: NSObject {
     private var timeObserver: AnyObject? = nil
     private var kvoRate = "rate"
     private let PlayerViewModelCurrentTimeKey = "PlayerViewModelCurrentTimeKey"
+    private let PodcastShowCurrentTime = "PodcastShowCurrentTime"
 
     private func setShowMediaItemDuringInit(newShowMediaItem: MPMediaItem) {
         // workaround to get showMediaItem didSet called from init()
@@ -69,7 +89,7 @@ class PlayerViewModel: NSObject {
     private override init() {   // prevent others from using the singleton's default initializer
         super.init()
 
-        if let showURL = PlayerModel.sharedInstance.showURL, showMediaItem = PodcastMedia.sharedInstance.showMediaItemForShowURL(showURL) {
+        if let showURL = PlayerModel.sharedInstance.showURL, showMediaItem = PodcastMedia.sharedInstance.podcastQuery[showURL] {
             setShowMediaItemDuringInit(showMediaItem)
         }
         
@@ -101,7 +121,7 @@ class PlayerViewModel: NSObject {
             return
         }
         PlayerModel.sharedInstance.player?.addObserver(self, forKeyPath: kvoRate, options: [.New], context: &kvoRate)
-        timeObserver = PlayerModel.sharedInstance.player?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(Float64(1.0), Int32(NSEC_PER_SEC)), queue: dispatch_get_main_queue()) { (time :CMTime) -> Void in
+        timeObserver = PlayerModel.sharedInstance.player?.addPeriodicTimeObserverForInterval(CMTimeMakeWithSeconds(Double(1.0), Int32(NSEC_PER_SEC)), queue: dispatch_get_main_queue()) { (time :CMTime) -> Void in
             if UIApplication.sharedApplication().applicationState == .Active {
                 // update observable property for PlayerView
                 self.progress = calcProgress(divisor: time, dividend: PlayerModel.sharedInstance.player?.currentItem?.duration)
@@ -131,17 +151,61 @@ class PlayerViewModel: NSObject {
         return nil
     }
     
+    // MARK: - bookmark show current time
+    
+    func saveShowCurrentTime() {
+        guard showMediaItem != nil else {
+            return
+        }
+        // var podcastsShowsCurrentTime : [String : [String : Double]] =
+        var podcastsShowsCurrentTime = NSUserDefaults.standardUserDefaults().dictionaryForKey(PodcastShowCurrentTime) as? [String : [String : Double]] ?? [String : [String : Double]]()
+        var showsCurrentTime : [String : Double] = podcastsShowsCurrentTime[showMediaItem!.podcastTitleValue] ?? [String : Double]()
+        
+        
+        if let player = PlayerModel.sharedInstance.player {
+            showsCurrentTime[showMediaItem!.showTitleValue] = CMTimeGetSeconds(player.currentTime())
+            podcastsShowsCurrentTime[showMediaItem!.podcastTitleValue] = showsCurrentTime
+            
+            // filter non existant podcasts
+            //var filteredPodcastsShowsCurrentTime = podcastsShowsCurrentTime.filterKeys({ PodcastMedia.sharedInstance.podcastForPodcastTitle($0) != nil ? true : false })
+            var filteredPodcastsShowsCurrentTime = podcastsShowsCurrentTime.filterKeys({ PodcastMedia.sharedInstance.podcastQuery[$0] != nil ? true : false })
+
+            // filter non existant shows in this podcast
+            let podcast = PodcastMedia.sharedInstance.podcastQuery[showMediaItem!.podcastTitleValue] //PodcastMedia.sharedInstance.podcastForPodcastTitle(podcastTitle)
+            //let filteredShowsCurrentTime = showsCurrentTime.filterKeys({ PodcastMedia.showMediaItemForPodcast(podcast, withShowTitle: $0) != nil ? true : false })
+            let filteredShowsCurrentTime = showsCurrentTime.filterKeys({ podcast?[$0] != nil ? true : false })
+            
+            filteredPodcastsShowsCurrentTime[showMediaItem!.podcastTitleValue] = filteredShowsCurrentTime
+        
+            NSUserDefaults.standardUserDefaults().setObject(filteredPodcastsShowsCurrentTime, forKey: PodcastShowCurrentTime)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+    }
+    
+    func restoreShowCurrentTime() {
+        guard showMediaItem != nil && PlayerModel.sharedInstance.player != nil else {
+            return
+        }
+        if let podcastsShowsCurrentTime = NSUserDefaults.standardUserDefaults().dictionaryForKey(PodcastShowCurrentTime) {
+            if let showsCurrentTime = podcastsShowsCurrentTime[showMediaItem!.podcastTitleValue] as? [String : Double] {
+                if let showCurrentTime = showsCurrentTime[showMediaItem!.showTitleValue] {
+                    PlayerModel.sharedInstance.player?.seekToTime(CMTimeMakeWithSeconds(showCurrentTime, Int32(NSEC_PER_SEC)))
+                }
+            }
+        }
+    }
+    
     func savePlayerCurrentTime() {
         if let player = PlayerModel.sharedInstance.player {
-            let currentTime = Float(CMTimeGetSeconds(player.currentTime()))
-            NSUserDefaults.standardUserDefaults().setFloat(currentTime, forKey: PlayerViewModelCurrentTimeKey)
+            let currentTime = Double(CMTimeGetSeconds(player.currentTime()))
+            NSUserDefaults.standardUserDefaults().setDouble(currentTime, forKey: PlayerViewModelCurrentTimeKey)
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
     
     func restorePlayerCurrentTime() {
-        let currentTimeFloat64 = Float64(NSUserDefaults.standardUserDefaults().floatForKey(PlayerViewModelCurrentTimeKey))
-        PlayerModel.sharedInstance.player?.seekToTime(CMTimeMakeWithSeconds(currentTimeFloat64, Int32(NSEC_PER_SEC)))
+        let currentTime = NSUserDefaults.standardUserDefaults().doubleForKey(PlayerViewModelCurrentTimeKey)
+        PlayerModel.sharedInstance.player?.seekToTime(CMTimeMakeWithSeconds(currentTime, Int32(NSEC_PER_SEC)))
     }
     
     func playPauseButtonPress() {
@@ -155,13 +219,13 @@ class PlayerViewModel: NSObject {
     
     func reverseButtonPress() {
         if let player = PlayerModel.sharedInstance.player {
-            player.seekToTime(CMTimeSubtract(player.currentTime(), CMTimeMakeWithSeconds(Float64(30.0), player.currentTime().timescale)))
+            player.seekToTime(CMTimeSubtract(player.currentTime(), CMTimeMakeWithSeconds(Double(30.0), player.currentTime().timescale)))
         }
     }
     
     func forwardButtonPress() {
         if let player = PlayerModel.sharedInstance.player {
-            player.seekToTime(CMTimeAdd(player.currentTime(), CMTimeMakeWithSeconds(Float64(30.0), player.currentTime().timescale)))
+            player.seekToTime(CMTimeAdd(player.currentTime(), CMTimeMakeWithSeconds(Double(30.0), player.currentTime().timescale)))
         }
     }
     

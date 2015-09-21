@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0301EBC31BAF0A21007EF33A /* PodcastMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */; settings = {ASSET_TAGS = (); }; };
+		0301EBC51BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */; settings = {ASSET_TAGS = (); }; };
+		0301EBC61BAF0B7B007EF33A /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
 		0358004E1B8112810028247D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358004D1B8112810028247D /* Main.storyboard */; };
 		0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */; };
 		0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
@@ -25,8 +28,9 @@
 		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
-		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; settings = {ASSET_TAGS = (); }; };
-		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; settings = {ASSET_TAGS = (); }; };
+		03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E8F24A1BA877CF000F3086 /* UserDefaults.swift */; };
+		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; };
+		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMediaTests.swift; sourceTree = "<group>"; };
+		0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMediaSimulatorTests.swift; sourceTree = "<group>"; };
 		0358004D1B8112810028247D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InstaClip Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 		03D59C171B7E4E01008A1FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		03E8F24A1BA877CF000F3086 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		03EEAE2B1B90B70900333EEF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +171,7 @@
 				03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */,
 				03BB2E191B8B84180057E702 /* PlayerModel.swift */,
 				03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */,
+				03E8F24A1BA877CF000F3086 /* UserDefaults.swift */,
 				0358004D1B8112810028247D /* Main.storyboard */,
 				0359A1281B7E4BE700C2DC32 /* Assets.xcassets */,
 				0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */,
@@ -176,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */,
+				0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */,
+				0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */,
 				0359A1381B7E4BE800C2DC32 /* Info.plist */,
 			);
 			path = "InstaClip PlayerTests";
@@ -291,6 +301,7 @@
 		0359A1161B7E4BE700C2DC32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Moonrise Software";
 				TargetAttributes = {
@@ -380,6 +391,7 @@
 				03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */,
 				03650CC11B810B6D004E5863 /* ShowTableViewController.swift in Sources */,
 				03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */,
+				03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */,
 				03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */,
 				03BA73E61B7E5DA700F4916F /* README.md in Sources */,
 				03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */,
@@ -394,7 +406,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0301EBC61BAF0B7B007EF33A /* PodcastMedia.swift in Sources */,
+				0301EBC51BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift in Sources */,
 				0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */,
+				0301EBC31BAF0A21007EF33A /* PodcastMediaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

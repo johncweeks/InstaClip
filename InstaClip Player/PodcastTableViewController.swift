@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class PodcastTableViewController: UITableViewController, UISplitViewControllerDelegate, UIDataSourceModelAssociation {
     
@@ -24,6 +25,16 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let podcastMediaItemCollection = PodcastMedia.sharedInstance.podcastQuery[indexPath.row] {
+        // Configure the cell...
+            cell.textLabel?.text = podcastMediaItemCollection.podcastTitleValue
+            cell.imageView?.image = podcastMediaItemCollection.artworkImageValue
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -32,15 +43,11 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PodcastMedia.sharedInstance.podcastCount()
+        return PodcastMedia.sharedInstance.podcastQuery.countValue
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PodcastReuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-        cell.textLabel?.text = PodcastMedia.sharedInstance.podcastTitleForIndex(indexPath.row)
-        cell.imageView?.image = PodcastMedia.sharedInstance.podcastImageForIndex(indexPath.row)
         
         return cell
     }
@@ -57,16 +64,17 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
                     showTableViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     showTableViewController.navigationItem.leftItemsSupplementBackButton = true
                     if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
-                        showTableViewController.podcast =  PodcastMedia.sharedInstance.podcastForIndex(selectedRowIndexPath.row)
+                        //showTableViewController.podcast =  PodcastMedia.sharedInstance.podcastForIndex(selectedRowIndexPath.row)
+                        showTableViewController.podcast = PodcastMedia.sharedInstance.podcastQuery[selectedRowIndexPath.row]
                     }
                 }
             }
         } else if segue.identifier == "NowPlayingDetailSegueID" {
             if let showNavigationController = segue.destinationViewController as? UINavigationController {
-                if let showTableViewController = showNavigationController.topViewController as? ShowTableViewController {
+                if let showTableViewController = showNavigationController.topViewController as? ShowTableViewController, show = PlayerViewModel.sharedInstance.showMediaItem {
                     showTableViewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                     showTableViewController.navigationItem.leftItemsSupplementBackButton = true
-                        showTableViewController.podcast =  PodcastMedia.sharedInstance.podcastForIndex(PodcastMedia.sharedInstance.podcastIndexForShowMediaItem(PlayerViewModel.sharedInstance.showMediaItem))
+                        showTableViewController.podcast = PodcastMedia.sharedInstance.podcastQuery[show]
                 }
             }
             
@@ -92,7 +100,7 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
         guard !isNil(idx) && !isNil(view) else {
             return nil
         }
-        return PodcastMedia.sharedInstance.podcastTitleForIndex(idx.row)
+        return PodcastMedia.sharedInstance.podcastQuery[idx.row]?.podcastTitleValue
     }
     
     func indexPathForElementWithModelIdentifier(identifier: String, inView view: UIView) -> NSIndexPath? {
@@ -100,6 +108,10 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
         guard !isNil(identifier) && !isNil(view) else {
             return nil
         }
-        return NSIndexPath(forRow: PodcastMedia.sharedInstance.podcastIndexForTitle(identifier), inSection: 0)
+        //return NSIndexPath(forRow: PodcastMedia.sharedInstance.podcastIndexForTitle(identifier), inSection: 0)
+        if let index = PodcastMedia.sharedInstance.podcastQuery.indexOfPodcastWithTitle(identifier) {
+            return NSIndexPath(forRow: index, inSection: 0)
+        }
+        return nil
     }
 }

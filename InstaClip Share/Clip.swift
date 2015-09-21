@@ -29,7 +29,7 @@ struct Clip {
         
         do {
             let assetReader = try AVAssetReader(asset: urlAsset)
-            let stopTimeCMT = CMTimeAdd(startTimeCMT, CMTimeMakeWithSeconds(Float64(20.0), Int32(NSEC_PER_SEC)))
+            let stopTimeCMT = CMTimeAdd(startTimeCMT, CMTimeMakeWithSeconds(Double(20.0), Int32(NSEC_PER_SEC)))
             let clipTimeRange = CMTimeRangeFromTimeToTime(startTimeCMT, stopTimeCMT)
             assetReader.timeRange = clipTimeRange
             

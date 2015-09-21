@@ -13,10 +13,13 @@ import MediaPlayer
 class ShowTableViewController: UITableViewController, UIDataSourceModelAssociation {
 
     @IBOutlet weak var actionBarButton: UIBarButtonItem!
-    
+
     var podcast: MPMediaItemCollection? {
         didSet {
-            navigationItem.title = PodcastMedia.podcastTitleForPodcast(podcast)
+//            if podcast == nil {
+//                podcast = MPMediaItemCollection(items: [])
+//            }
+            navigationItem.title = podcast?.podcastTitleValue
         }
     }
     
@@ -40,10 +43,10 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         playerView = tableView.dequeueReusableCellWithIdentifier("PlayerViewReuseIdentifier") as? PlayerView
-        playerView?.artWorkImageView.image = PodcastMedia.imageForPodcast(podcast)
+        playerView?.artWorkImageView.image = podcast?.artworkImageValue
         
         // is player active with a show for this podcast?
-        if let index = PodcastMedia.indexForShowInPodcast(podcast, withShowMediaItem: PlayerViewModel.sharedInstance.showMediaItem) { // where PlayerViewModel.sharedInstance.showMediaItem != nil  where handels simulator edge case
+        if let index = podcast?.indexOfShow(PlayerViewModel.sharedInstance.showMediaItem) {
             tableView.selectRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0), animated: false, scrollPosition: .None)
             playerView?.showMediaItem = PlayerViewModel.sharedInstance.showMediaItem
         }        
@@ -52,10 +55,26 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
     
     // MARK: - UITableViewDelegate
     
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        PlayerViewModel.sharedInstance.saveShowCurrentTime()
+        return indexPath
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        PlayerViewModel.sharedInstance.showMediaItem = PodcastMedia.showMediaItemForPodcast(podcast, withIndex: indexPath.row)
+        guard podcast != nil else {
+            return
+        }
+        PlayerViewModel.sharedInstance.showMediaItem = podcast![indexPath.row]
+        PlayerViewModel.sharedInstance.restoreShowCurrentTime()
         PlayerViewModel.sharedInstance.playPauseButtonPress() // start playback
-        playerView?.showMediaItem = PodcastMedia.showMediaItemForPodcast(podcast, withIndex: indexPath.row)
+        playerView?.showMediaItem = podcast![indexPath.row]
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard podcast != nil else {
+            return
+        }
+        cell.textLabel?.text = podcast![indexPath.row]?.showTitleValue
     }
     
     // MARK: - Table view data source
@@ -63,23 +82,23 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PodcastMedia.showCountForPodcast(podcast)
+        guard podcast != nil else {
+            return 0
+        }
+        return podcast!.countValue
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ShowReuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-        cell.textLabel?.text = PodcastMedia.showTitleForPodcast(podcast, withIndex: indexPath.row)
-
         return cell
     }
     
     @IBAction func actionButtonPress(sender: UIBarButtonItem) {
-        if let showURL = PodcastMedia.showURLForShowMediaItem(PlayerViewModel.sharedInstance.showMediaItem), currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
+        //if let showURL = PodcastMedia.showURLForShowMediaItem(PlayerViewModel.sharedInstance.showMediaItem), currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
+        if let showURL = PlayerViewModel.sharedInstance.showMediaItem?.showURLValue,
+               currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
             let activityVC = UIActivityViewController(activityItems: [showURL, currentTime], applicationActivities: nil)
             presentViewController(activityVC, animated: true, completion: nil)
         }
@@ -88,14 +107,17 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
     // MARK: - state restoration
     
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        let podcastTitle = PodcastMedia.podcastTitleForPodcast(podcast)
+        guard podcast != nil else {
+            return
+        }
+        let podcastTitle = podcast!.podcastTitleValue
         coder.encodeObject(podcastTitle, forKey: "PodcastTitle")
         super.encodeRestorableStateWithCoder(coder)
     }
     
     override func decodeRestorableStateWithCoder(coder: NSCoder) {
         if let podcastTitle = coder.decodeObjectForKey("PodcastTitle") as? String {
-            podcast = PodcastMedia.sharedInstance.podcastForPodcastTitle(podcastTitle)
+            podcast = PodcastMedia.sharedInstance.podcastQuery[podcastTitle]
         }
         super.decodeRestorableStateWithCoder(coder)
     }
@@ -104,11 +126,10 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
     
     func modelIdentifierForElementAtIndexPath(idx: NSIndexPath, inView view: UIView) -> String? {
         // called during restore with idx==nil
-        guard !isNil(idx) && !isNil(view) else {
+        guard !isNil(idx) && !isNil(view) && podcast != nil else {
             return nil
         }
-        
-        if let showURL = PodcastMedia.showURLForPodcast(podcast, withIndex: idx.row) {
+        if let showURL = podcast![idx.row]?.showURLValue {
             return showURL.absoluteString
         }
         return nil
@@ -116,10 +137,10 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
  
     func indexPathForElementWithModelIdentifier(identifier: String, inView view: UIView) -> NSIndexPath? {
         // being cautious here because of idx==nil in modelIdentifierForElementAtIndexPath
-        guard !isNil(identifier) && !isNil(view) else {
+        guard !isNil(identifier) && !isNil(view) && podcast != nil else {
             return nil
         }
-        if let showURL = NSURL.init(string: identifier), index = PodcastMedia.indexForShowInPodcast(podcast, withShowURL: showURL) {
+        if let showURL = NSURL.init(string: identifier), index = podcast!.indexOfShowWithURL(showURL) {
             return NSIndexPath(forRow: index, inSection: 0)
         }
         return nil
