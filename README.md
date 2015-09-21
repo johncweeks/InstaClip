@@ -7,7 +7,7 @@ By [John Weeks](http://moonrisesoftware.net/blog/)
 Have you ever wanted to share an excerpt from a podcast with someone? InstaClip Share to the rescue! The extension makes an audio clip of a podcast and attaches it to a message that you can send.
 
 ###### What’s new in V0.2
-I cleaned up the code used to access iOS media library (podcasts are sync'd here) and added unit tests to test that. 
+I updated the code that accesses the iOS media library (podcasts are sync'd here) from plain old functions to Swift extensions and added unit tests to test them. Check out my blog post for more details.   
 
 ###### V0.1
 In this version I have focused on an adaptive UI to select podcasts that have been synced on your iOS device from iTunes or Apple’s Podcast app. I wanted to create a simple and functional UI for all iOS devices that allows you to play existing podcast episodes. The main point of this project is to demonstrate a share extension in Swift so I’m not going to reinvent the wheel by coding a podcast syncing mechanism.
