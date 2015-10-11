@@ -23,11 +23,13 @@
 		03BA73E61B7E5DA700F4916F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03BA73E51B7E5DA700F4916F /* README.md */; };
 		03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E191B8B84180057E702 /* PlayerModel.swift */; };
 		03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E1D1B8B86050057E702 /* PlayerView.swift */; };
+		03CF60E41BC46E85009FEBE2 /* CMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CF60E31BC46E85009FEBE2 /* CMUtils.m */; settings = {ASSET_TAGS = (); }; };
 		03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */; };
 		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
+		03DD6EDA1BC307090073E82E /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD6ED91BC307090073E82E /* Waveform.swift */; settings = {ASSET_TAGS = (); }; };
 		03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E8F24A1BA877CF000F3086 /* UserDefaults.swift */; };
 		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; };
 		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; };
@@ -93,12 +95,16 @@
 		03BA73E51B7E5DA700F4916F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		03BB2E191B8B84180057E702 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		03BB2E1D1B8B86050057E702 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		03CF60E11BC46E85009FEBE2 /* InstaClip Share-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaClip Share-Bridging-Header.h"; sourceTree = "<group>"; };
+		03CF60E21BC46E85009FEBE2 /* CMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUtils.h; sourceTree = "<group>"; };
+		03CF60E31BC46E85009FEBE2 /* CMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUtils.m; sourceTree = "<group>"; };
 		03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = developing_perspective_224.mp3; sourceTree = "<group>"; };
 		03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InstaClip Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		03D59C171B7E4E01008A1FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		03DD6ED91BC307090073E82E /* Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
 		03E8F24A1BA877CF000F3086 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		03EEAE2B1B90B70900333EEF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
@@ -213,9 +219,13 @@
 			isa = PBXGroup;
 			children = (
 				03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */,
+				03DD6ED91BC307090073E82E /* Waveform.swift */,
 				03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */,
+				03CF60E21BC46E85009FEBE2 /* CMUtils.h */,
+				03CF60E31BC46E85009FEBE2 /* CMUtils.m */,
 				03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */,
 				03D59C171B7E4E01008A1FE0 /* Info.plist */,
+				03CF60E11BC46E85009FEBE2 /* InstaClip Share-Bridging-Header.h */,
 			);
 			path = "InstaClip Share";
 			sourceTree = "<group>";
@@ -307,6 +317,7 @@
 				TargetAttributes = {
 					0359A11D1B7E4BE700C2DC32 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 7W29LPPP5V;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -323,6 +334,7 @@
 					};
 					03D59C0F1B7E4E01008A1FE0 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 7W29LPPP5V;
 					};
 				};
 			};
@@ -426,7 +438,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */,
+				03CF60E41BC46E85009FEBE2 /* CMUtils.m in Sources */,
 				03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */,
+				03DD6EDA1BC307090073E82E /* Waveform.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +493,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -524,7 +539,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -549,11 +565,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -561,11 +580,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -620,22 +642,33 @@
 		03D59C1C1B7E4E02008A1FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				INFOPLIST_FILE = "InstaClip Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaClip Share/InstaClip Share-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		03D59C1D1B7E4E02008A1FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: John Weeks (53664634D4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Weeks (53664634D4)";
 				INFOPLIST_FILE = "InstaClip Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaClip Share/InstaClip Share-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -16,9 +16,6 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
 
     var podcast: MPMediaItemCollection? {
         didSet {
-//            if podcast == nil {
-//                podcast = MPMediaItemCollection(items: [])
-//            }
             navigationItem.title = podcast?.podcastTitleValue
         }
     }

@@ -67,8 +67,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "net.moonrisesoftware.InstaClip-Player"
+         RemotePath = "/var/mobile/Containers/Bundle/Application/58D285A0-B8BA-4B7F-AC56-1DDA7BE01CC1/InstaClip Player.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0359A11D1B7E4BE700C2DC32"
@@ -76,7 +80,7 @@
             BlueprintName = "InstaClip Player"
             ReferencedContainer = "container:InstaClip Player.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

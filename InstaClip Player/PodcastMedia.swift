@@ -14,9 +14,22 @@ import MediaPlayer
 class PodcastMedia {
     
     static let sharedInstance = PodcastMedia()
-    private init() {} // prevent others from using the default initializer
-    
     let podcastQuery = MPMediaQuery.podcastsQuery()
+    
+    private init() { // private prevents others from using the default initializer
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "mediaLibraryDidChange:", name: MPMediaLibraryDidChangeNotification, object: nil)
+        MPMediaLibrary.defaultMediaLibrary().beginGeneratingLibraryChangeNotifications()
+    }
+    
+    @objc func mediaLibraryDidChange(notification: NSNotification) {
+        if let splitVC = UIApplication.sharedApplication().keyWindow?.rootViewController as? UISplitViewController {
+            if let navVC = splitVC.viewControllers.last as? UINavigationController {
+                if let tableVC = navVC.visibleViewController as? UITableViewController {
+                    tableVC.tableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension MPMediaItem {

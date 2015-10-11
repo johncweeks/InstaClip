@@ -95,6 +95,8 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
                 self.showAlertWithTitle("Can't create the clip", message: msg)
             }
         })
+        let waveform = Waveform(podcastURL: podcastURL)
+        waveform.readAndReduce(startTimeCMT)
     }
     
     private func showAlertWithTitle(title: String, message: String?) {

@@ -77,7 +77,6 @@ class PodcastTableViewController: UITableViewController, UISplitViewControllerDe
                         showTableViewController.podcast = PodcastMedia.sharedInstance.podcastQuery[show]
                 }
             }
-            
         }
     }
 

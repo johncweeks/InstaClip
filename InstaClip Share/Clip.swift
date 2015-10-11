@@ -60,7 +60,7 @@ struct Clip {
             } else if sampleRate > 44100.0 {
                 sampleRate = 44100.0
             }
-            let assetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeAudio, outputSettings: [AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            let assetWriterInput = AVAssetWriterInput(mediaType: AVMediaTypeAudio, outputSettings: [AVFormatIDKey: Int(kAudioFormatMPEG4AAC), //kAudioFormatLinearPCM
                 AVSampleRateKey: sampleRate, AVNumberOfChannelsKey: channelCount]) // processingFormat.sampleRate
             if !assetWriter.canAddInput(assetWriterInput) {
                 throw ClipResult.Failure("Asset Writer Can't Add Input")
