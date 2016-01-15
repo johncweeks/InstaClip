@@ -70,7 +70,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "1"
          BundleIdentifier = "net.moonrisesoftware.InstaClip-Player"
-         RemotePath = "/var/mobile/Containers/Bundle/Application/58D285A0-B8BA-4B7F-AC56-1DDA7BE01CC1/InstaClip Player.app">
+         RemotePath = "/var/mobile/Containers/Bundle/Application/F73851BE-ABA6-4B1A-9CF6-AD59F6E4E3CA/InstaClip Player.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

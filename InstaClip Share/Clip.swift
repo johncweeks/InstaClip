@@ -23,14 +23,14 @@ struct Clip {
     
     let transcodeQueue = dispatch_queue_create("net.moonrisesoftware.clipcaster.transcodequeue", nil)
     
-    func newFromURL(podcastURL :NSURL, startTimeCMT: CMTime, completionHandler: ClipCompletionHandler) -> Void {
+    func newFromURL(podcastURL :NSURL, startTime: CMTime, completionHandler: ClipCompletionHandler) -> Void {
         
         let urlAsset = AVURLAsset(URL: podcastURL)
         
         do {
             let assetReader = try AVAssetReader(asset: urlAsset)
-            let stopTimeCMT = CMTimeAdd(startTimeCMT, CMTimeMakeWithSeconds(Double(20.0), Int32(NSEC_PER_SEC)))
-            let clipTimeRange = CMTimeRangeFromTimeToTime(startTimeCMT, stopTimeCMT)
+            let stopTime = CMTimeAdd(startTime, CMTimeMakeWithSeconds(Double(20.0), Int32(NSEC_PER_SEC)))
+            let clipTimeRange = CMTimeRangeFromTimeToTime(startTime, stopTime)
             assetReader.timeRange = clipTimeRange
             
             let assetReaderOutput = AVAssetReaderAudioMixOutput(audioTracks: urlAsset.tracksWithMediaType(AVMediaTypeAudio), audioSettings: nil)
@@ -84,7 +84,7 @@ struct Clip {
                 }
             }
             
-            assetWriter.startSessionAtSourceTime(startTimeCMT)
+            assetWriter.startSessionAtSourceTime(startTime)
             
             assetWriterInput.requestMediaDataWhenReadyOnQueue(self.transcodeQueue, usingBlock: { () -> Void in
                 while assetWriterInput.readyForMoreMediaData {
