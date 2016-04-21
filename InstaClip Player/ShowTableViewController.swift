@@ -97,6 +97,8 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
         if let showURL = PlayerViewModel.sharedInstance.showMediaItem?.showURLValue,
                currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
             let activityVC = UIActivityViewController(activityItems: [showURL, currentTime], applicationActivities: nil)
+            // needed for iPad 
+            activityVC.popoverPresentationController?.barButtonItem = self.actionBarButton
             presentViewController(activityVC, animated: true, completion: nil)
         }
     }

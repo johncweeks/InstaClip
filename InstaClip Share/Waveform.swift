@@ -20,6 +20,8 @@ private let BUFFER_COUNT = 3
 
 class Waveform {
     
+//    var ringBuf: RingBuffer<Float32>
+    
     let urlAsset: AVURLAsset
     let mtlDevice: MTLDevice
     
@@ -58,6 +60,20 @@ class Waveform {
             dispatch_semaphore_wait(avaliableMtlBufferSemaphore, DISPATCH_TIME_FOREVER)
         }
         
+//        do {
+//            ringBuf = try RingBuffer<Float32>(count: 8192)
+//        } catch {
+//            return
+//        }
+        
+//        ringBuf =  RingBuffer<Float32>()
+//        do {
+//            try ringBuf.reserveCapacity(8124)
+//        } catch {
+//            print("handle this error")
+//        }
+//        
+//        let value: Float32 = ringBuf[0]
         
         urlAsset.loadValuesAsynchronouslyForKeys(["tracks"]) { () -> Void in
             var error: NSError?
@@ -76,6 +92,8 @@ class Waveform {
                     print("Missing audio track or it's format description")
                     return
             }
+            
+
             // as! CMFormatDescription should always succeed
             guard CMFormatDescriptionGetMediaType(formatDescription as! CMFormatDescription) == kCMMediaType_Audio else {
                 print("format description is NOT Audio")
@@ -94,6 +112,7 @@ class Waveform {
             self.channelCount = Int(asbd.memory.mChannelsPerFrame)
             self.conflateBucketSize = (Int(asbd.memory.mSampleRate)*Int(asbd.memory.mChannelsPerFrame)*SAMPLE_SCALE) / Int(min(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height) * UIScreen.mainScreen().scale)
             
+            
             self.waveform.reserveCapacity((SAMPLE_DURATION/SAMPLE_SCALE) * Int(max(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height) * UIScreen.mainScreen().scale) * 2)
             
             self.portraitNormalizedY.reserveCapacity((SAMPLE_DURATION/SAMPLE_SCALE) * Int(min(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height) * UIScreen.mainScreen().scale) * 2)
@@ -107,6 +126,20 @@ class Waveform {
         for _ in 0..<BUFFER_COUNT{
             dispatch_semaphore_signal(avaliableMtlBufferSemaphore)
         }
+    }
+    
+    func vertexMtlBuffer2(index: Int) -> (mtlBuffer: MTLBuffer, vertexCount: Int, avaliableMtlBufferSemaphore: dispatch_semaphore_t) {
+        
+        
+        dispatch_semaphore_wait(avaliableMtlBufferSemaphore, DISPATCH_TIME_FOREVER)
+        
+        let mtlBuffer = mtlBuffers[availableMtlBufferIndex]
+        availableMtlBufferIndex = (availableMtlBufferIndex+1) % BUFFER_COUNT
+        
+        // FIXME: should be &ringBuf[]
+        memcpy(mtlBuffer.contents(), &waveform[(index*2)], mtlBuffer.length)
+        return (mtlBuffer, mtlBuffer.length/sizeof(MetalPositionComponent), avaliableMtlBufferSemaphore)
+        
     }
     
     func vertexMtlBuffer(index: Int) -> (mtlBuffer: MTLBuffer, vertexCount: Int, avaliableMtlBufferSemaphore: dispatch_semaphore_t) {

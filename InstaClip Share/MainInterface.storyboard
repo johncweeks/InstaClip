@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="j1y-V4-xli">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,12 +24,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-tq-DMa" userLabel="WaveformView" customClass="WaveformView" customModule="InstaClip_Share" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-tq-DMa" userLabel="WaveformEditorView" customClass="WaveformEditorView" customModule="InstaClip_Share" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="49" width="600" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="10000" id="K2K-uj-2O0"/>
                                     <constraint firstAttribute="height" constant="128" id="mAX-N8-SYC"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K2K-uj-2O0"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWJ-TY-ELA" customClass="TMButton" customModule="InstaClip_Share" customModuleProvider="target">
                                 <rect key="frame" x="270" y="550" width="60" height="30"/>
@@ -58,6 +64,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e1M-tq-DMa" firstAttribute="width" secondItem="wbc-yd-nQP" secondAttribute="width" id="2Fr-Ro-uNc"/>
                             <constraint firstItem="e1M-tq-DMa" firstAttribute="top" secondItem="P9a-cX-sZb" secondAttribute="bottom" constant="8" id="2d7-tG-sl2"/>
                             <constraint firstItem="e1M-tq-DMa" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="7Ha-vf-n7F"/>
                             <constraint firstItem="tWJ-TY-ELA" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="Lat-Ac-udu"/>
@@ -68,10 +75,15 @@
                             <constraint firstItem="e1M-tq-DMa" firstAttribute="width" secondItem="wbc-yd-nQP" secondAttribute="width" id="k45-Z5-jrs"/>
                             <constraint firstItem="P9a-cX-sZb" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="t5D-8G-pnf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="k45-Z5-jrs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="waveformView" destination="e1M-tq-DMa" id="I1u-zP-Ndz"/>
+                        <outlet property="waveformEditorView" destination="e1M-tq-DMa" id="O0e-RZ-rll"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEy-Cv-SGf" userLabel="First Responder" sceneMemberID="firstResponder"/>

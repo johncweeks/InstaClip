@@ -59,9 +59,10 @@ class PlayerViewModel: NSObject {
                 }
                 if let show = showMediaItem {
                     nowPlayingInfo = [
-                        MPMediaItemPropertyTitle : show.showTitleValue,
-                        MPMediaItemPropertyAlbumTitle : show.podcastTitleValue,
-                        MPMediaItemPropertyArtwork : show.mediaItemArtworkValue
+                        MPMediaItemPropertyTitle: show.showTitleValue,
+                        MPMediaItemPropertyAlbumTitle: show.podcastTitleValue,
+                        MPMediaItemPropertyArtwork: show.mediaItemArtworkValue
+//                        MPMediaItemPropertyPersistentID: NSNumber(unsignedLongLong: CUnsignedLongLong(show.persistentID))
                     ]
                 }
                 if let player = PlayerModel.sharedInstance.player, currentItem = player.currentItem {
@@ -76,17 +77,19 @@ class PlayerViewModel: NSObject {
         }
     }
     
+    private let skipInterval = 30.0
     private var timeObserver: AnyObject? = nil
     private var kvoRate = "rate"
     private let PlayerViewModelCurrentTimeKey = "PlayerViewModelCurrentTimeKey"
     private let PodcastShowCurrentTime = "PodcastShowCurrentTime"
-
+    
     private func setShowMediaItemDuringInit(newShowMediaItem: MPMediaItem) {
         // workaround to get showMediaItem didSet called from init()
         showMediaItem = newShowMediaItem
     }
     
     private override init() {   // prevent others from using the singleton's default initializer
+        
         super.init()
 
         if let showURL = PlayerModel.sharedInstance.showURL, showMediaItem = PodcastMedia.sharedInstance.podcastQuery[showURL] {
@@ -106,14 +109,18 @@ class PlayerViewModel: NSObject {
             self.playPauseButtonPress()
             return .Success
         }
-        MPRemoteCommandCenter.sharedCommandCenter().seekBackwardCommand.addTargetWithHandler { (remoteCommandEvent: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus in
-            self.reverseButtonPress()
+        MPRemoteCommandCenter.sharedCommandCenter().skipBackwardCommand.addTargetWithHandler { (remoteCommandEvent: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus in
+            self.skipBackwardButtonPress()
             return .Success
         }
-        MPRemoteCommandCenter.sharedCommandCenter().seekForwardCommand.addTargetWithHandler { (remoteCommandEvent: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus in
-            self.forwardButtonPress()
+        MPRemoteCommandCenter.sharedCommandCenter().skipBackwardCommand.preferredIntervals = [skipInterval]
+
+        MPRemoteCommandCenter.sharedCommandCenter().skipForwardCommand.addTargetWithHandler { (remoteCommandEvent: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus in
+            self.skipForwardButtonPress()
             return .Success
         }
+        MPRemoteCommandCenter.sharedCommandCenter().skipForwardCommand.preferredIntervals = [skipInterval]
+
     }
     
     private func addObservers () {
@@ -217,13 +224,13 @@ class PlayerViewModel: NSObject {
         }
     }
     
-    func reverseButtonPress() {
+    func skipBackwardButtonPress() {
         if let player = PlayerModel.sharedInstance.player {
             player.seekToTime(CMTimeSubtract(player.currentTime(), CMTimeMakeWithSeconds(Double(30.0), player.currentTime().timescale)))
         }
     }
     
-    func forwardButtonPress() {
+    func skipForwardButtonPress() {
         if let player = PlayerModel.sharedInstance.player {
             player.seekToTime(CMTimeAdd(player.currentTime(), CMTimeMakeWithSeconds(Double(30.0), player.currentTime().timescale)))
         }

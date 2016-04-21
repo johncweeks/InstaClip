@@ -53,6 +53,16 @@
                ReferencedContainer = "container:InstaClip Player.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "03A0A0F11CC6769700F99266"
+               BuildableName = "InstaClip ShareTests.xctest"
+               BlueprintName = "InstaClip ShareTests"
+               ReferencedContainer = "container:InstaClip Player.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

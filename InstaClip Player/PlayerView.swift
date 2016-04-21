@@ -74,10 +74,10 @@ class PlayerView: UITableViewCell {
     }
     
     @IBAction func reverseButtonPress(sender: UIButton) {
-        PlayerViewModel.sharedInstance.reverseButtonPress()
+        PlayerViewModel.sharedInstance.skipBackwardButtonPress()
     }
     @IBAction func forwardButtonPress(sender: UIButton) {
-        PlayerViewModel.sharedInstance.forwardButtonPress()
+        PlayerViewModel.sharedInstance.skipForwardButtonPress()
     }
 
     // MARK: - KVO

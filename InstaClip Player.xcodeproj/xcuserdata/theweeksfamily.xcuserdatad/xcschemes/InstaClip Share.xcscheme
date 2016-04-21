@@ -43,13 +43,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "03A0A1081CC6896A00F99266"
+               BuildableName = "InstaClip ShareTests.xctest"
+               BlueprintName = "InstaClip ShareTests"
+               ReferencedContainer = "container:InstaClip Player.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03D59C0F1B7E4E01008A1FE0"
-            BuildableName = "InstaClip Share.appex"
-            BlueprintName = "InstaClip Share"
+            BlueprintIdentifier = "0359A11D1B7E4BE700C2DC32"
+            BuildableName = "InstaClip Player.app"
+            BlueprintName = "InstaClip Player"
             ReferencedContainer = "container:InstaClip Player.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,7 +80,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "1"
          BundleIdentifier = "net.moonrisesoftware.InstaClip-Player"
-         RemotePath = "/var/mobile/Containers/Bundle/Application/F73851BE-ABA6-4B1A-9CF6-AD59F6E4E3CA/InstaClip Player.app">
+         RemotePath = "/Users/theweeksfamily/Library/Developer/CoreSimulator/Devices/7587584E-BF14-4EFA-97EC-B5FEBB5C22FD/data/Containers/Bundle/Application/841D2856-85FC-4337-8DA2-E2006F6EA99D/InstaClip Player.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

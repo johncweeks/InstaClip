@@ -10,33 +10,43 @@
 		0301EBC31BAF0A21007EF33A /* PodcastMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */; };
 		0301EBC51BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */; };
 		0301EBC61BAF0B7B007EF33A /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
-		032A81E91BE3B6FF00E14B24 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A81E81BE3B6FF00E14B24 /* WaveformView.swift */; };
+		03214E711CC693DE003C7288 /* WaveformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036161931CB6ED810087892A /* WaveformViewModel.swift */; };
+		03214E721CC693DE003C7288 /* WaveformEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */; };
+		03214E731CC693FC003C7288 /* WaveformContentlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */; };
+		032A81E91BE3B6FF00E14B24 /* WaveformEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */; };
+		0331110C1C52BCF900D23B08 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A41C52B25300DAA075 /* RingBuffer.swift */; };
+		033315A71C52B29B00DAA075 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A61C52B29B00DAA075 /* RingBufferTests.swift */; };
 		0358004E1B8112810028247D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358004D1B8112810028247D /* Main.storyboard */; };
 		0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */; };
 		0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
 		0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */; };
 		0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */; };
 		0359A1421B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */; };
+		036161941CB6ED810087892A /* WaveformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036161931CB6ED810087892A /* WaveformViewModel.swift */; };
 		03650CC11B810B6D004E5863 /* ShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03650CC01B810B6D004E5863 /* ShowTableViewController.swift */; };
 		036D71081C02454B00C2E969 /* TMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D71071C02454B00C2E969 /* TMButton.swift */; };
 		037D208C1BFB8E4500B23F30 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D208B1BFB8E4500B23F30 /* ShareView.swift */; };
 		037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D87A81B8289F6003A5E6A /* SplitViewController.swift */; };
-		039C67AF1BD1452F00D4C788 /* shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 039C67AE1BD1452F00D4C788 /* shaders.metal */; };
+		03A0A10C1CC6896B00F99266 /* InstaClip_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */; };
+		03A0A1161CC689D900F99266 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A0A1151CC689D900F99266 /* Info.plist */; };
+		03A0A1171CC68A0700F99266 /* WaveformViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */; };
+		03A411A61CC6C1A800CE4583 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03ABC48A1B7E8A1300E258E3 /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
 		03B3FCFC1B7FDF0B004D6265 /* PodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */; };
-		03BA73E61B7E5DA700F4916F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 03BA73E51B7E5DA700F4916F /* README.md */; };
+		03B4C60D1CB6BEC80000BEFC /* WaveformContentlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */; };
 		03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E191B8B84180057E702 /* PlayerModel.swift */; };
 		03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E1D1B8B86050057E702 /* PlayerView.swift */; };
-		03CF60E41BC46E85009FEBE2 /* CMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CF60E31BC46E85009FEBE2 /* CMUtils.m */; };
 		03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */; };
 		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
+		03DBE0521CC80AF60004ECCE /* sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 03DBE0511CC80AD00004ECCE /* sample.m4a */; };
 		03DD6EDA1BC307090073E82E /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD6ED91BC307090073E82E /* Waveform.swift */; };
 		03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E8F24A1BA877CF000F3086 /* UserDefaults.swift */; };
 		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; };
 		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; };
+		03F20F191C53F93100462076 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A41C52B25300DAA075 /* RingBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +90,9 @@
 /* Begin PBXFileReference section */
 		0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMediaTests.swift; sourceTree = "<group>"; };
 		0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMediaSimulatorTests.swift; sourceTree = "<group>"; };
-		032A81E81BE3B6FF00E14B24 /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
+		032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformEditorView.swift; sourceTree = "<group>"; };
+		033315A41C52B25300DAA075 /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		033315A61C52B29B00DAA075 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = "../InstaClip Share/RingBufferTests.swift"; sourceTree = "<group>"; };
 		0358004D1B8112810028247D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InstaClip Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,25 +105,29 @@
 		0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_PlayerUITests.swift; sourceTree = "<group>"; };
 		0359A1431B7E4BE800C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		036161931CB6ED810087892A /* WaveformViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformViewModel.swift; sourceTree = "<group>"; };
 		03650CC01B810B6D004E5863 /* ShowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTableViewController.swift; sourceTree = "<group>"; };
 		036D71071C02454B00C2E969 /* TMButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TMButton.swift; path = ../TMButton.swift; sourceTree = "<group>"; };
 		037D208B1BFB8E4500B23F30 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		037D87A81B8289F6003A5E6A /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		039C67AE1BD1452F00D4C788 /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = shaders.metal; path = ../shaders.metal; sourceTree = "<group>"; };
+		03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaveformViewModelTests.swift; path = "../InstaClip Share/WaveformViewModelTests.swift"; sourceTree = "<group>"; };
+		03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_ShareTests.swift; sourceTree = "<group>"; };
+		03A0A1151CC689D900F99266 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMedia.swift; sourceTree = "<group>"; };
 		03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewController.swift; sourceTree = "<group>"; };
+		03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformContentlView.swift; sourceTree = "<group>"; };
 		03BA73E51B7E5DA700F4916F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		03BB2E191B8B84180057E702 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		03BB2E1D1B8B86050057E702 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		03CF60E11BC46E85009FEBE2 /* InstaClip Share-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaClip Share-Bridging-Header.h"; sourceTree = "<group>"; };
-		03CF60E21BC46E85009FEBE2 /* CMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMUtils.h; path = "InstaClip Share/CMUtils.h"; sourceTree = "<group>"; };
-		03CF60E31BC46E85009FEBE2 /* CMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMUtils.m; path = "InstaClip Share/CMUtils.m"; sourceTree = "<group>"; };
 		03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = developing_perspective_224.mp3; sourceTree = "<group>"; };
 		03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InstaClip Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		03D59C171B7E4E01008A1FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		03DBE0511CC80AD00004ECCE /* sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.m4a; sourceTree = "<group>"; };
 		03DC4F851C1B7AB900FC9D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		03DD6ED91BC307090073E82E /* Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
 		03E8F24A1BA877CF000F3086 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -141,6 +157,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03A0A1061CC6896A00F99266 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03D59C0D1B7E4E01008A1FE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,12 +178,11 @@
 			isa = PBXGroup;
 			children = (
 				03DC4F851C1B7AB900FC9D90 /* QuartzCore.framework */,
-				03CF60E21BC46E85009FEBE2 /* CMUtils.h */,
-				03CF60E31BC46E85009FEBE2 /* CMUtils.m */,
 				0359A1201B7E4BE700C2DC32 /* InstaClip Player */,
 				0359A1351B7E4BE800C2DC32 /* InstaClip PlayerTests */,
 				0359A1401B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
 				03D59C111B7E4E01008A1FE0 /* InstaClip Share */,
+				03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */,
 				0359A11F1B7E4BE700C2DC32 /* Products */,
 				03D59C0B1B7E4D25008A1FE0 /* Supporting Files */,
 			);
@@ -173,6 +195,7 @@
 				0359A1321B7E4BE800C2DC32 /* InstaClip PlayerTests.xctest */,
 				0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */,
 				03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */,
+				03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +227,7 @@
 				0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */,
 				0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */,
 				0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */,
+				033315A61C52B29B00DAA075 /* RingBufferTests.swift */,
 				0359A1381B7E4BE800C2DC32 /* Info.plist */,
 			);
 			path = "InstaClip PlayerTests";
@@ -218,11 +242,22 @@
 			path = "InstaClip PlayerUITests";
 			sourceTree = "<group>";
 		};
+		03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */,
+				03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */,
+				03A0A1151CC689D900F99266 /* Info.plist */,
+			);
+			path = "InstaClip ShareTests";
+			sourceTree = "<group>";
+		};
 		03D59C0B1B7E4D25008A1FE0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				03BA73E51B7E5DA700F4916F /* README.md */,
 				03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */,
+				03DBE0511CC80AD00004ECCE /* sample.m4a */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -231,15 +266,17 @@
 			isa = PBXGroup;
 			children = (
 				039C67AE1BD1452F00D4C788 /* shaders.metal */,
+				033315A41C52B25300DAA075 /* RingBuffer.swift */,
 				03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */,
 				03DD6ED91BC307090073E82E /* Waveform.swift */,
-				032A81E81BE3B6FF00E14B24 /* WaveformView.swift */,
+				036161931CB6ED810087892A /* WaveformViewModel.swift */,
+				03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */,
+				032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */,
 				037D208B1BFB8E4500B23F30 /* ShareView.swift */,
 				036D71071C02454B00C2E969 /* TMButton.swift */,
 				03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */,
 				03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */,
 				03D59C171B7E4E01008A1FE0 /* Info.plist */,
-				03CF60E11BC46E85009FEBE2 /* InstaClip Share-Bridging-Header.h */,
 			);
 			path = "InstaClip Share";
 			sourceTree = "<group>";
@@ -302,6 +339,23 @@
 			productReference = 0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		03A0A1081CC6896A00F99266 /* InstaClip ShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03A0A1101CC6896B00F99266 /* Build configuration list for PBXNativeTarget "InstaClip ShareTests" */;
+			buildPhases = (
+				03A0A1051CC6896A00F99266 /* Sources */,
+				03A0A1061CC6896A00F99266 /* Frameworks */,
+				03A0A1071CC6896A00F99266 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InstaClip ShareTests";
+			productName = "InstaClip ShareTests";
+			productReference = 03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03D59C1B1B7E4E02008A1FE0 /* Build configuration list for PBXNativeTarget "InstaClip Share" */;
@@ -325,7 +379,7 @@
 		0359A1161B7E4BE700C2DC32 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Moonrise Software";
 				TargetAttributes = {
@@ -345,6 +399,9 @@
 					0359A13C1B7E4BE800C2DC32 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 0359A11D1B7E4BE700C2DC32;
+					};
+					03A0A1081CC6896A00F99266 = {
+						CreatedOnToolsVersion = 7.3;
 					};
 					03D59C0F1B7E4E01008A1FE0 = {
 						CreatedOnToolsVersion = 7.0;
@@ -369,6 +426,7 @@
 				0359A1311B7E4BE800C2DC32 /* InstaClip PlayerTests */,
 				0359A13C1B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
 				03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */,
+				03A0A1081CC6896A00F99266 /* InstaClip ShareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03DBE0521CC80AF60004ECCE /* sample.m4a in Resources */,
 				03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */,
 				0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */,
 				0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */,
@@ -396,6 +455,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03A0A1071CC6896A00F99266 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03A411A61CC6C1A800CE4583 /* developing_perspective_224.mp3 in Resources */,
+				03A0A1161CC689D900F99266 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +487,6 @@
 				03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */,
 				03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */,
 				03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */,
-				03BA73E61B7E5DA700F4916F /* README.md in Sources */,
 				03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */,
 				037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */,
 				0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */,
@@ -432,10 +499,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0331110C1C52BCF900D23B08 /* RingBuffer.swift in Sources */,
 				0301EBC61BAF0B7B007EF33A /* PodcastMedia.swift in Sources */,
 				0301EBC51BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift in Sources */,
 				0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */,
 				0301EBC31BAF0A21007EF33A /* PodcastMediaTests.swift in Sources */,
+				033315A71C52B29B00DAA075 /* RingBufferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,18 +516,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03A0A1051CC6896A00F99266 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03214E731CC693FC003C7288 /* WaveformContentlView.swift in Sources */,
+				03214E711CC693DE003C7288 /* WaveformViewModel.swift in Sources */,
+				03214E721CC693DE003C7288 /* WaveformEditorView.swift in Sources */,
+				03A0A1171CC68A0700F99266 /* WaveformViewModelTests.swift in Sources */,
+				03A0A10C1CC6896B00F99266 /* InstaClip_ShareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03D59C0C1B7E4E01008A1FE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03F20F191C53F93100462076 /* RingBuffer.swift in Sources */,
+				036161941CB6ED810087892A /* WaveformViewModel.swift in Sources */,
 				03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */,
-				039C67AF1BD1452F00D4C788 /* shaders.metal in Sources */,
-				03CF60E41BC46E85009FEBE2 /* CMUtils.m in Sources */,
+				03B4C60D1CB6BEC80000BEFC /* WaveformContentlView.swift in Sources */,
 				037D208C1BFB8E4500B23F30 /* ShareView.swift in Sources */,
 				03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */,
 				03DD6EDA1BC307090073E82E /* Waveform.swift in Sources */,
 				036D71081C02454B00C2E969 /* TMButton.swift in Sources */,
-				032A81E91BE3B6FF00E14B24 /* WaveformView.swift in Sources */,
+				032A81E91BE3B6FF00E14B24 /* WaveformEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +597,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -561,6 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -585,6 +669,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -600,6 +685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "InstaClip Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -657,19 +743,44 @@
 			};
 			name = Release;
 		};
+		03A0A1111CC6896B00F99266 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "InstaClip ShareTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		03A0A1121CC6896B00F99266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "InstaClip ShareTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		03D59C1C1B7E4E02008A1FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "InstaClip Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InstaClip Share/InstaClip Share-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -680,13 +791,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "InstaClip Share/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.InstaClip-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InstaClip Share/InstaClip Share-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -725,6 +837,15 @@
 			buildConfigurations = (
 				0359A14D1B7E4BE800C2DC32 /* Debug */,
 				0359A14E1B7E4BE800C2DC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03A0A1101CC6896B00F99266 /* Build configuration list for PBXNativeTarget "InstaClip ShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03A0A1111CC6896B00F99266 /* Debug */,
+				03A0A1121CC6896B00F99266 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

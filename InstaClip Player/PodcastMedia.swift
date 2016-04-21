@@ -17,7 +17,7 @@ class PodcastMedia {
     let podcastQuery = MPMediaQuery.podcastsQuery()
     
     private init() { // private prevents others from using the default initializer
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "mediaLibraryDidChange:", name: MPMediaLibraryDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PodcastMedia.mediaLibraryDidChange(_:)), name: MPMediaLibraryDidChangeNotification, object: nil)
         MPMediaLibrary.defaultMediaLibrary().beginGeneratingLibraryChangeNotifications()
     }
     
@@ -57,10 +57,12 @@ extension MPMediaItem {
     
     var showURLValue: NSURL {
         guard assetURL != nil else {
-            return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")!
+            //return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")!
+            return NSBundle.mainBundle().URLForResource("sample", withExtension: "m4a")!
         }
         return assetURL!
     }
+    
 }
 
 extension MPMediaItemCollection {
@@ -78,6 +80,8 @@ extension MPMediaItemCollection {
         }
         return representativeItem!.podcastTitle!
     }
+    
+    
     
     var artworkImageValue: UIImage! {
         guard representativeItem != nil else {
