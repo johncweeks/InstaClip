@@ -54,7 +54,7 @@ class WaveformEditorView: UIView {
         self.currentTime = currentTime
         var newBounds = self.bounds
         newBounds.origin.x = ceil(CGFloat(CMTimeGetSeconds(currentTime)) * kPointsPerSecond)
-//        waveformContentView.frame.size.width == 0 so this code fails
+//        when called waveformContentView.frame.size.width == 0 so this code fails
 //        if newBounds.origin.x > waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width {
 //            newBounds.origin.x = waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width
 //            //print("newBounds x \(newBounds.origin.x)")
