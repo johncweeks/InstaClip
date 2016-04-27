@@ -13,18 +13,35 @@ import AVFoundation
 let kWaveformSampleSeconds: CGFloat = 20 //37.5 //10
 let kPointsPerSecond: CGFloat = 10
 
-class WaveformEditorView: UIView {
 
+class WaveformEditorView: UIView {
+    
     private var currentTime: CMTime!
     private var panStartBounds = CGRectZero
-    private let waveformContentView = WaveformContentView()
-//    private lazy var waveformContentView: WaveformContentView = {
-//        return WaveformContentView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
-//    }()
+    private var waveformContentView: WaveformContentView! {
+        didSet {
+            self.waveformContentView.widthDidChange = { [unowned self] waveformContentView in
+                var newBounds = self.bounds
+                newBounds.origin.x = ceil(CGFloat(CMTimeGetSeconds(self.currentTime)) * kPointsPerSecond)
+                
+                if newBounds.origin.x > waveformContentView.width - UIScreen.mainScreen().bounds.size.width {
+                    newBounds.origin.x = waveformContentView.width - UIScreen.mainScreen().bounds.size.width
+                    //print("newBounds x \(newBounds.origin.x)")
+                }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.bounds = newBounds
+                })
+            }
+        }
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
+        
         super.init(coder: aDecoder)
         
+        // wrap in closure so didSet gets called in init() 
+        ({self.waveformContentView = WaveformContentView()})()
         self.addSubview(self.waveformContentView)
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(WaveformEditorView.handlePanGesture(_:)))
@@ -54,16 +71,13 @@ class WaveformEditorView: UIView {
         self.currentTime = currentTime
         var newBounds = self.bounds
         newBounds.origin.x = ceil(CGFloat(CMTimeGetSeconds(currentTime)) * kPointsPerSecond)
-//        when called waveformContentView.frame.size.width == 0 so this code fails
-//        if newBounds.origin.x > waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width {
-//            newBounds.origin.x = waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width
-//            //print("newBounds x \(newBounds.origin.x)")
-//        }
-
+        
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.bounds = newBounds
         })
+
         waveformContentView.configure(podcastURL)
     }
     
+
 }

@@ -57,8 +57,7 @@ extension MPMediaItem {
     
     var showURLValue: NSURL {
         guard assetURL != nil else {
-            //return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")!
-            return NSBundle.mainBundle().URLForResource("sample", withExtension: "m4a")!
+            return NSBundle.mainBundle().URLForResource("developing_perspective_224", withExtension: "mp3")!
         }
         return assetURL!
     }
