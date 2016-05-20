@@ -71,6 +71,7 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
         guard podcast != nil else {
             return
         }
+
         cell.textLabel?.text = podcast![indexPath.row]?.showTitleValue
     }
     
@@ -94,6 +95,7 @@ class ShowTableViewController: UITableViewController, UIDataSourceModelAssociati
     
     @IBAction func actionButtonPress(sender: UIBarButtonItem) {
         //if let showURL = PodcastMedia.showURLForShowMediaItem(PlayerViewModel.sharedInstance.showMediaItem), currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
+        PlayerViewModel.sharedInstance.pausePlayer()
         if let showURL = PlayerViewModel.sharedInstance.showMediaItem?.showURLValue,
                currentTime = PlayerViewModel.sharedInstance.playerCurrentTime() {
             let activityVC = UIActivityViewController(activityItems: [showURL, currentTime], applicationActivities: nil)

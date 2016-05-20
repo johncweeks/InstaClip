@@ -12,8 +12,10 @@ Share extension features:
 - State Restoration
 - Remote Control (lock screen, headphone button)
 
+###### What’s new in V0.3
+The Share Extension now has a clip editor. The audio waveform is scrollable throughout the entire podcast.  Drag the clip start or end to change the clip's beginning or end time. The arrow buttons shift the clip forward or backward in the timeline. I rewrote the Share Extension using the VIPER application architecture. I'll be posting a blot entry about my experience shortly.
 
-###### What’s new in V0.2
+###### V0.2
 I updated the code that accesses the iOS media library (podcasts are sync'd here) from plain old functions to Swift extensions and added unit tests to test them. Check out my blog post for more details.   
 
 ###### V0.1

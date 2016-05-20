@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ICShareExt.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>InstaClip Player.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,6 +37,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>038A91FC1CD14F5800CE5769</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>03A0A0F11CC6769700F99266</key>
 		<dict>
 			<key>primary</key>
@@ -42,7 +52,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>03B24ADB1CD13A0F005AA16E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03B8A3621CD13AC100821D16</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>03D59C0F1B7E4E01008A1FE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03D643301CD1383F0079944D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

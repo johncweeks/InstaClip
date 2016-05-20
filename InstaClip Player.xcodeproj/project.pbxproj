@@ -15,18 +15,27 @@
 		03214E731CC693FC003C7288 /* WaveformContentlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */; };
 		032A81E91BE3B6FF00E14B24 /* WaveformEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */; };
 		0331110C1C52BCF900D23B08 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A41C52B25300DAA075 /* RingBuffer.swift */; };
-		033315A71C52B29B00DAA075 /* RingBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A61C52B29B00DAA075 /* RingBufferTests.swift */; };
+		034817391CD2AE2200CF9B2A /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034817371CD2AC5800CF9B2A /* RootWireframe.swift */; };
+		034C923E1CD6A6CB002A67E9 /* ICSEAVAssetDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C923D1CD6A6CB002A67E9 /* ICSEAVAssetDataManager.swift */; };
+		035486791CDB852200A29F72 /* ICSEAVPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035486781CDB852200A29F72 /* ICSEAVPlayerManager.swift */; };
 		0358004E1B8112810028247D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0358004D1B8112810028247D /* Main.storyboard */; };
+		035840CC1CD79551009909AB /* ICSEExtensionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035840CB1CD79551009909AB /* ICSEExtensionItem.swift */; };
+		035840CE1CD7A748009909AB /* ICSEAVAssetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035840CD1CD7A748009909AB /* ICSEAVAssetItem.swift */; };
 		0359A1221B7E4BE700C2DC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */; };
 		0359A1291B7E4BE700C2DC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
 		0359A12C1B7E4BE700C2DC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359A12A1B7E4BE700C2DC32 /* LaunchScreen.storyboard */; };
 		0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */; };
 		0359A1421B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */; };
+		035F78081CDA4A0500585B1C /* ICSEView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F50C901CD7E3B000AFFFCA /* ICSEView.xib */; };
+		035F780D1CDA4BD200585B1C /* ICSEWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F780C1CDA4BD200585B1C /* ICSEWireframe.swift */; };
 		036161941CB6ED810087892A /* WaveformViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036161931CB6ED810087892A /* WaveformViewModel.swift */; };
 		03650CC11B810B6D004E5863 /* ShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03650CC01B810B6D004E5863 /* ShowTableViewController.swift */; };
 		036D71081C02454B00C2E969 /* TMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D71071C02454B00C2E969 /* TMButton.swift */; };
+		036DE8991CE13A0000BC560B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
+		037C4C001CE36938009993D6 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		037D208C1BFB8E4500B23F30 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D208B1BFB8E4500B23F30 /* ShareView.swift */; };
 		037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D87A81B8289F6003A5E6A /* SplitViewController.swift */; };
+		038A92071CD14F5800CE5769 /* ICShareExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 038A91FD1CD14F5800CE5769 /* ICShareExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03A0A10C1CC6896B00F99266 /* InstaClip_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */; };
 		03A0A1161CC689D900F99266 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A0A1151CC689D900F99266 /* Info.plist */; };
 		03A0A1171CC68A0700F99266 /* WaveformViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */; };
@@ -34,19 +43,29 @@
 		03ABC48A1B7E8A1300E258E3 /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
 		03B3FCFC1B7FDF0B004D6265 /* PodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */; };
 		03B4C60D1CB6BEC80000BEFC /* WaveformContentlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */; };
+		03BAB8AC1CDE3667009CF68E /* ICSEClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BAB8AB1CDE3667009CF68E /* ICSEClipView.swift */; };
 		03BB2E1A1B8B84180057E702 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E191B8B84180057E702 /* PlayerModel.swift */; };
 		03BB2E1E1B8B86050057E702 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB2E1D1B8B86050057E702 /* PlayerView.swift */; };
+		03BCD36E1CD15B87009B95A3 /* ICSEInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD3621CD15B87009B95A3 /* ICSEInteractor.swift */; };
+		03BCD3701CD15B87009B95A3 /* ICSEPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD3651CD15B87009B95A3 /* ICSEPresenter.swift */; };
+		03BCD3711CD15B87009B95A3 /* ICSEProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD3671CD15B87009B95A3 /* ICSEProtocols.swift */; };
+		03BCD3721CD15B87009B95A3 /* ICSEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD3691CD15B87009B95A3 /* ICSEView.swift */; };
+		03D188A81CD82FA8007D40F7 /* ICSEDefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D188A71CD82FA8007D40F7 /* ICSEDefaultConfiguration.swift */; };
 		03D59C0A1B7E4D19008A1FE0 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03D59C131B7E4E01008A1FE0 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */; };
 		03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		03D59C201B7E4E2A008A1FE0 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D59C1F1B7E4E2A008A1FE0 /* Clip.swift */; };
 		03D59C221B7E4E7A008A1FE0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */; };
 		03DBE0521CC80AF60004ECCE /* sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 03DBE0511CC80AD00004ECCE /* sample.m4a */; };
+		03DCA6141CD67EAA00BDAC88 /* ICSEExtensionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCA6131CD67EAA00BDAC88 /* ICSEExtensionDataManager.swift */; };
 		03DD6EDA1BC307090073E82E /* Waveform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD6ED91BC307090073E82E /* Waveform.swift */; };
+		03E061A71CDD4941001CD37E /* ICSEPlayheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E061A61CDD4941001CD37E /* ICSEPlayheadView.swift */; };
 		03E8F24B1BA877D0000F3086 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E8F24A1BA877CF000F3086 /* UserDefaults.swift */; };
 		03EEAE2C1B90B70900333EEF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEAE2B1B90B70900333EEF /* Utils.swift */; };
 		03EEF7771B8F8B86006DF737 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */; };
 		03F20F191C53F93100462076 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033315A41C52B25300DAA075 /* RingBuffer.swift */; };
+		03F50C931CD7E75000AFFFCA /* ICSEWaveformEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F50C921CD7E75000AFFFCA /* ICSEWaveformEditorView.swift */; };
+		03F50C951CD7E79900AFFFCA /* ICSEWaveformContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F50C941CD7E79900AFFFCA /* ICSEWaveformContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +83,13 @@
 			remoteGlobalIDString = 0359A11D1B7E4BE700C2DC32;
 			remoteInfo = "InstaClip Player";
 		};
+		038A92051CD14F5800CE5769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0359A1161B7E4BE700C2DC32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 038A91FC1CD14F5800CE5769;
+			remoteInfo = ICShareExt;
+		};
 		03D59C181B7E4E01008A1FE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0359A1161B7E4BE700C2DC32 /* Project object */;
@@ -80,6 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				038A92071CD14F5800CE5769 /* ICShareExt.appex in Embed App Extensions */,
 				03D59C1A1B7E4E01008A1FE0 /* InstaClip Share.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -92,8 +119,12 @@
 		0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMediaSimulatorTests.swift; sourceTree = "<group>"; };
 		032A81E81BE3B6FF00E14B24 /* WaveformEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformEditorView.swift; sourceTree = "<group>"; };
 		033315A41C52B25300DAA075 /* RingBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
-		033315A61C52B29B00DAA075 /* RingBufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RingBufferTests.swift; path = "../InstaClip Share/RingBufferTests.swift"; sourceTree = "<group>"; };
+		034817371CD2AC5800CF9B2A /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireframe.swift; sourceTree = "<group>"; };
+		034C923D1CD6A6CB002A67E9 /* ICSEAVAssetDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEAVAssetDataManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		035486781CDB852200A29F72 /* ICSEAVPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEAVPlayerManager.swift; sourceTree = "<group>"; };
 		0358004D1B8112810028247D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		035840CB1CD79551009909AB /* ICSEExtensionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEExtensionItem.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		035840CD1CD7A748009909AB /* ICSEAVAssetItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEAVAssetItem.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		0359A11E1B7E4BE700C2DC32 /* InstaClip Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InstaClip Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1211B7E4BE700C2DC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0359A1281B7E4BE700C2DC32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,11 +136,15 @@
 		0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip PlayerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0359A1411B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_PlayerUITests.swift; sourceTree = "<group>"; };
 		0359A1431B7E4BE800C2DC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		035F780C1CDA4BD200585B1C /* ICSEWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEWireframe.swift; sourceTree = "<group>"; };
 		036161931CB6ED810087892A /* WaveformViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformViewModel.swift; sourceTree = "<group>"; };
 		03650CC01B810B6D004E5863 /* ShowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTableViewController.swift; sourceTree = "<group>"; };
 		036D71071C02454B00C2E969 /* TMButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TMButton.swift; path = ../TMButton.swift; sourceTree = "<group>"; };
 		037D208B1BFB8E4500B23F30 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		037D87A81B8289F6003A5E6A /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		038A91FD1CD14F5800CE5769 /* ICShareExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ICShareExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		038A91FF1CD14F5800CE5769 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		038A92041CD14F5800CE5769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		039C67AE1BD1452F00D4C788 /* shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = shaders.metal; path = ../shaders.metal; sourceTree = "<group>"; };
 		03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaveformViewModelTests.swift; path = "../InstaClip Share/WaveformViewModelTests.swift"; sourceTree = "<group>"; };
 		03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +154,14 @@
 		03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewController.swift; sourceTree = "<group>"; };
 		03B4C60C1CB6BEC80000BEFC /* WaveformContentlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformContentlView.swift; sourceTree = "<group>"; };
 		03BA73E51B7E5DA700F4916F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		03BAB8AB1CDE3667009CF68E /* ICSEClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEClipView.swift; sourceTree = "<group>"; };
 		03BB2E191B8B84180057E702 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		03BB2E1D1B8B86050057E702 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		03BCD3621CD15B87009B95A3 /* ICSEInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEInteractor.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		03BCD3651CD15B87009B95A3 /* ICSEPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEPresenter.swift; sourceTree = "<group>"; };
+		03BCD3671CD15B87009B95A3 /* ICSEProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEProtocols.swift; sourceTree = "<group>"; };
+		03BCD3691CD15B87009B95A3 /* ICSEView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEView.swift; sourceTree = "<group>"; };
+		03D188A71CD82FA8007D40F7 /* ICSEDefaultConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEDefaultConfiguration.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = developing_perspective_224.mp3; sourceTree = "<group>"; };
 		03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InstaClip Share.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D59C121B7E4E01008A1FE0 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -129,10 +170,15 @@
 		03D59C211B7E4E7A008A1FE0 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		03DBE0511CC80AD00004ECCE /* sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.m4a; sourceTree = "<group>"; };
 		03DC4F851C1B7AB900FC9D90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03DCA6131CD67EAA00BDAC88 /* ICSEExtensionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ICSEExtensionDataManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		03DD6ED91BC307090073E82E /* Waveform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Waveform.swift; sourceTree = "<group>"; };
+		03E061A61CDD4941001CD37E /* ICSEPlayheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEPlayheadView.swift; sourceTree = "<group>"; };
 		03E8F24A1BA877CF000F3086 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		03EEAE2B1B90B70900333EEF /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		03EEF7761B8F8B86006DF737 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		03F50C901CD7E3B000AFFFCA /* ICSEView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ICSEView.xib; sourceTree = "<group>"; };
+		03F50C921CD7E75000AFFFCA /* ICSEWaveformEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEWaveformEditorView.swift; sourceTree = "<group>"; };
+		03F50C941CD7E79900AFFFCA /* ICSEWaveformContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ICSEWaveformContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +203,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		038A91FA1CD14F5800CE5769 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		03A0A1061CC6896A00F99266 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +227,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034817341CD2ABC500CF9B2A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				034817351CD2ABF500CF9B2A /* Wireframe */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		034817351CD2ABF500CF9B2A /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				034817371CD2AC5800CF9B2A /* RootWireframe.swift */,
+				03D188A71CD82FA8007D40F7 /* ICSEDefaultConfiguration.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		035486771CDB845900A29F72 /* AVPlayerManager */ = {
+			isa = PBXGroup;
+			children = (
+				035486781CDB852200A29F72 /* ICSEAVPlayerManager.swift */,
+			);
+			path = AVPlayerManager;
+			sourceTree = "<group>";
+		};
 		0359A1151B7E4BE700C2DC32 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +261,8 @@
 				0359A1401B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
 				03D59C111B7E4E01008A1FE0 /* InstaClip Share */,
 				03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */,
+				038A91FE1CD14F5800CE5769 /* ICShareExt */,
+				03BCD35A1CD15B87009B95A3 /* Shared */,
 				0359A11F1B7E4BE700C2DC32 /* Products */,
 				03D59C0B1B7E4D25008A1FE0 /* Supporting Files */,
 			);
@@ -196,6 +276,7 @@
 				0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */,
 				03D59C101B7E4E01008A1FE0 /* InstaClip Share.appex */,
 				03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */,
+				038A91FD1CD14F5800CE5769 /* ICShareExt.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,7 +308,6 @@
 				0359A1361B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift */,
 				0301EBC21BAF0A21007EF33A /* PodcastMediaTests.swift */,
 				0301EBC41BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift */,
-				033315A61C52B29B00DAA075 /* RingBufferTests.swift */,
 				0359A1381B7E4BE800C2DC32 /* Info.plist */,
 			);
 			path = "InstaClip PlayerTests";
@@ -242,6 +322,23 @@
 			path = "InstaClip PlayerUITests";
 			sourceTree = "<group>";
 		};
+		035F780B1CDA4B3000585B1C /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				035F780C1CDA4BD200585B1C /* ICSEWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		038A91FE1CD14F5800CE5769 /* ICShareExt */ = {
+			isa = PBXGroup;
+			children = (
+				038A91FF1CD14F5800CE5769 /* ShareViewController.swift */,
+				038A92041CD14F5800CE5769 /* Info.plist */,
+			);
+			path = ICShareExt;
+			sourceTree = "<group>";
+		};
 		03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +347,85 @@
 				03A0A1151CC689D900F99266 /* Info.plist */,
 			);
 			path = "InstaClip ShareTests";
+			sourceTree = "<group>";
+		};
+		03BCD35A1CD15B87009B95A3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				034817341CD2ABC500CF9B2A /* Common */,
+				03BCD35B1CD15B87009B95A3 /* ICShareExt */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		03BCD35B1CD15B87009B95A3 /* ICShareExt */ = {
+			isa = PBXGroup;
+			children = (
+				03BCD35C1CD15B87009B95A3 /* DataManager */,
+				03BCD3611CD15B87009B95A3 /* Interactor */,
+				03BCD3641CD15B87009B95A3 /* Presenter */,
+				03BCD3661CD15B87009B95A3 /* Protocols */,
+				03BCD3681CD15B87009B95A3 /* View */,
+				035F780B1CDA4B3000585B1C /* Wireframe */,
+			);
+			path = ICShareExt;
+			sourceTree = "<group>";
+		};
+		03BCD35C1CD15B87009B95A3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				035486771CDB845900A29F72 /* AVPlayerManager */,
+				03C8729E1CD6A05C002CB395 /* AVAssetManager */,
+				03DCA6121CD67E4C00BDAC88 /* Extension */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		03BCD3611CD15B87009B95A3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				03BCD3621CD15B87009B95A3 /* ICSEInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		03BCD3641CD15B87009B95A3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				03BCD3651CD15B87009B95A3 /* ICSEPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		03BCD3661CD15B87009B95A3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				03BCD3671CD15B87009B95A3 /* ICSEProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		03BCD3681CD15B87009B95A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03BCD3691CD15B87009B95A3 /* ICSEView.swift */,
+				03F50C901CD7E3B000AFFFCA /* ICSEView.xib */,
+				03F50C921CD7E75000AFFFCA /* ICSEWaveformEditorView.swift */,
+				03F50C941CD7E79900AFFFCA /* ICSEWaveformContentView.swift */,
+				03E061A61CDD4941001CD37E /* ICSEPlayheadView.swift */,
+				03BAB8AB1CDE3667009CF68E /* ICSEClipView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03C8729E1CD6A05C002CB395 /* AVAssetManager */ = {
+			isa = PBXGroup;
+			children = (
+				034C923D1CD6A6CB002A67E9 /* ICSEAVAssetDataManager.swift */,
+				035840CD1CD7A748009909AB /* ICSEAVAssetItem.swift */,
+			);
+			name = AVAssetManager;
+			path = AVAsset;
 			sourceTree = "<group>";
 		};
 		03D59C0B1B7E4D25008A1FE0 /* Supporting Files */ = {
@@ -281,6 +457,15 @@
 			path = "InstaClip Share";
 			sourceTree = "<group>";
 		};
+		03DCA6121CD67E4C00BDAC88 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				03DCA6131CD67EAA00BDAC88 /* ICSEExtensionDataManager.swift */,
+				035840CB1CD79551009909AB /* ICSEExtensionItem.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +482,7 @@
 			);
 			dependencies = (
 				03D59C191B7E4E01008A1FE0 /* PBXTargetDependency */,
+				038A92061CD14F5800CE5769 /* PBXTargetDependency */,
 			);
 			name = "InstaClip Player";
 			productName = "InstaClip Player";
@@ -338,6 +524,23 @@
 			productName = "InstaClip PlayerUITests";
 			productReference = 0359A13D1B7E4BE800C2DC32 /* InstaClip PlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		038A91FC1CD14F5800CE5769 /* ICShareExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038A920A1CD14F5800CE5769 /* Build configuration list for PBXNativeTarget "ICShareExt" */;
+			buildPhases = (
+				038A91F91CD14F5800CE5769 /* Sources */,
+				038A91FA1CD14F5800CE5769 /* Frameworks */,
+				038A91FB1CD14F5800CE5769 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ICShareExt;
+			productName = ICShareExt;
+			productReference = 038A91FD1CD14F5800CE5769 /* ICShareExt.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		03A0A1081CC6896A00F99266 /* InstaClip ShareTests */ = {
 			isa = PBXNativeTarget;
@@ -400,6 +603,10 @@
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 0359A11D1B7E4BE700C2DC32;
 					};
+					038A91FC1CD14F5800CE5769 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7W29LPPP5V;
+					};
 					03A0A1081CC6896A00F99266 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -427,6 +634,7 @@
 				0359A13C1B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
 				03D59C0F1B7E4E01008A1FE0 /* InstaClip Share */,
 				03A0A1081CC6896A00F99266 /* InstaClip ShareTests */,
+				038A91FC1CD14F5800CE5769 /* ICShareExt */,
 			);
 		};
 /* End PBXProject section */
@@ -455,6 +663,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038A91FB1CD14F5800CE5769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				036DE8991CE13A0000BC560B /* Assets.xcassets in Resources */,
+				035F78081CDA4A0500585B1C /* ICSEView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +721,6 @@
 				0301EBC51BAF0A6F007EF33A /* PodcastMediaSimulatorTests.swift in Sources */,
 				0359A1371B7E4BE800C2DC32 /* InstaClip_PlayerTests.swift in Sources */,
 				0301EBC31BAF0A21007EF33A /* PodcastMediaTests.swift in Sources */,
-				033315A71C52B29B00DAA075 /* RingBufferTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +729,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				0359A1421B7E4BE800C2DC32 /* InstaClip_PlayerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		038A91F91CD14F5800CE5769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037C4C001CE36938009993D6 /* Clip.swift in Sources */,
+				035F780D1CDA4BD200585B1C /* ICSEWireframe.swift in Sources */,
+				034817391CD2AE2200CF9B2A /* RootWireframe.swift in Sources */,
+				035486791CDB852200A29F72 /* ICSEAVPlayerManager.swift in Sources */,
+				03BCD36E1CD15B87009B95A3 /* ICSEInteractor.swift in Sources */,
+				03BCD3721CD15B87009B95A3 /* ICSEView.swift in Sources */,
+				03F50C931CD7E75000AFFFCA /* ICSEWaveformEditorView.swift in Sources */,
+				035840CC1CD79551009909AB /* ICSEExtensionItem.swift in Sources */,
+				03BCD3701CD15B87009B95A3 /* ICSEPresenter.swift in Sources */,
+				035840CE1CD7A748009909AB /* ICSEAVAssetItem.swift in Sources */,
+				03E061A71CDD4941001CD37E /* ICSEPlayheadView.swift in Sources */,
+				03BCD3711CD15B87009B95A3 /* ICSEProtocols.swift in Sources */,
+				03D188A81CD82FA8007D40F7 /* ICSEDefaultConfiguration.swift in Sources */,
+				03BAB8AC1CDE3667009CF68E /* ICSEClipView.swift in Sources */,
+				034C923E1CD6A6CB002A67E9 /* ICSEAVAssetDataManager.swift in Sources */,
+				03F50C951CD7E79900AFFFCA /* ICSEWaveformContentView.swift in Sources */,
+				03DCA6141CD67EAA00BDAC88 /* ICSEExtensionDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +796,11 @@
 			isa = PBXTargetDependency;
 			target = 0359A11D1B7E4BE700C2DC32 /* InstaClip Player */;
 			targetProxy = 0359A13E1B7E4BE800C2DC32 /* PBXContainerItemProxy */;
+		};
+		038A92061CD14F5800CE5769 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 038A91FC1CD14F5800CE5769 /* ICShareExt */;
+			targetProxy = 038A92051CD14F5800CE5769 /* PBXContainerItemProxy */;
 		};
 		03D59C191B7E4E01008A1FE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -743,6 +988,32 @@
 			};
 			name = Release;
 		};
+		038A92081CD14F5800CE5769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = ICShareExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.ICShareExt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		038A92091CD14F5800CE5769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = ICShareExt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.moonrisesoftware.InstaClip-Player.ICShareExt";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		03A0A1111CC6896B00F99266 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -837,6 +1108,15 @@
 			buildConfigurations = (
 				0359A14D1B7E4BE800C2DC32 /* Debug */,
 				0359A14E1B7E4BE800C2DC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038A920A1CD14F5800CE5769 /* Build configuration list for PBXNativeTarget "ICShareExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038A92081CD14F5800CE5769 /* Debug */,
+				038A92091CD14F5800CE5769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

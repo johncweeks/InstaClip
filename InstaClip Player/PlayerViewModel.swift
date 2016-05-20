@@ -224,6 +224,11 @@ class PlayerViewModel: NSObject {
         }
     }
     
+    func pausePlayer() {
+        PlayerModel.sharedInstance.player?.pause()
+        savePlayerCurrentTime()
+    }
+    
     func skipBackwardButtonPress() {
         if let player = PlayerModel.sharedInstance.player {
             player.seekToTime(CMTimeSubtract(player.currentTime(), CMTimeMakeWithSeconds(Double(30.0), player.currentTime().timescale)))

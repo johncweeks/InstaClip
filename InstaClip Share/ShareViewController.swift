@@ -112,8 +112,8 @@ class ShareViewController: UIViewController, MFMessageComposeViewControllerDeleg
 //                self.waveformArray = waveform
 //            })
         
-        return
-        return
+        //return
+        //return
 
         clip.newFromURL(podcastURL, startTime: currentTime, completionHandler: { (result) -> Void in
             switch result {

@@ -84,7 +84,7 @@ class WaveformContentView: UIView, WaveformContentViewObserverProtocol {
         UIGraphicsPushContext(ctx)
         
         let rect = CGContextGetClipBoundingBox(ctx)
-
+        print(rect)
         let fill = UIColor.whiteColor()// UIColor(red: r, green: g, blue: b, alpha: 1.0)
         fill.setFill()
         fill.setStroke()
