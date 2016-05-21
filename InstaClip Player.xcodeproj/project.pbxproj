@@ -27,9 +27,6 @@
 		036DE8991CE13A0000BC560B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359A1281B7E4BE700C2DC32 /* Assets.xcassets */; };
 		037D87A91B8289F6003A5E6A /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037D87A81B8289F6003A5E6A /* SplitViewController.swift */; };
 		038A92071CD14F5800CE5769 /* ICShareExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 038A91FD1CD14F5800CE5769 /* ICShareExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		03A0A10C1CC6896B00F99266 /* InstaClip_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */; };
-		03A0A1161CC689D900F99266 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03A0A1151CC689D900F99266 /* Info.plist */; };
-		03A0A1171CC68A0700F99266 /* WaveformViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */; };
 		03A411A61CC6C1A800CE4583 /* developing_perspective_224.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03D59C091B7E4D19008A1FE0 /* developing_perspective_224.mp3 */; };
 		03ABC48A1B7E8A1300E258E3 /* PodcastMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */; };
 		03B3FCFC1B7FDF0B004D6265 /* PodcastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */; };
@@ -115,10 +112,7 @@
 		037D87A81B8289F6003A5E6A /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		038A91FD1CD14F5800CE5769 /* ICShareExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ICShareExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		038A92041CD14F5800CE5769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../ICShareExt/Info.plist; sourceTree = "<group>"; };
-		03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaveformViewModelTests.swift; path = "../InstaClip Share/WaveformViewModelTests.swift"; sourceTree = "<group>"; };
 		03A0A1091CC6896A00F99266 /* InstaClip ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InstaClip ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaClip_ShareTests.swift; sourceTree = "<group>"; };
-		03A0A1151CC689D900F99266 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03ABC4891B7E8A1300E258E3 /* PodcastMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastMedia.swift; sourceTree = "<group>"; };
 		03B3FCFB1B7FDF0B004D6265 /* PodcastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewController.swift; sourceTree = "<group>"; };
 		03BA73E51B7E5DA700F4916F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -214,7 +208,6 @@
 				0359A1201B7E4BE700C2DC32 /* InstaClip Player */,
 				0359A1351B7E4BE800C2DC32 /* InstaClip PlayerTests */,
 				0359A1401B7E4BE800C2DC32 /* InstaClip PlayerUITests */,
-				03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */,
 				03BCD35A1CD15B87009B95A3 /* Shared */,
 				0359A11F1B7E4BE700C2DC32 /* Products */,
 				03D59C0B1B7E4D25008A1FE0 /* Supporting Files */,
@@ -280,16 +273,6 @@
 				035F780C1CDA4BD200585B1C /* ICSEWireframe.swift */,
 			);
 			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		03A0A10A1CC6896B00F99266 /* InstaClip ShareTests */ = {
-			isa = PBXGroup;
-			children = (
-				03A0A0EC1CC6762600F99266 /* WaveformViewModelTests.swift */,
-				03A0A10B1CC6896B00F99266 /* InstaClip_ShareTests.swift */,
-				03A0A1151CC689D900F99266 /* Info.plist */,
-			);
-			path = "InstaClip ShareTests";
 			sourceTree = "<group>";
 		};
 		03BCD35A1CD15B87009B95A3 /* Shared */ = {
@@ -582,7 +565,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A411A61CC6C1A800CE4583 /* developing_perspective_224.mp3 in Resources */,
-				03A0A1161CC689D900F99266 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,8 +634,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03A0A1171CC68A0700F99266 /* WaveformViewModelTests.swift in Sources */,
-				03A0A10C1CC6896B00F99266 /* InstaClip_ShareTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
