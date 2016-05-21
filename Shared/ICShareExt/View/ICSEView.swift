@@ -153,7 +153,7 @@ extension ICSEView: ICSEViewProtocol {
       let messageAction = UIAlertAction(title: "message", style: .Default) { (alertAction) in
         let messageVC = MFMessageComposeViewController()
         messageVC.messageComposeDelegate = self
-        if messageVC.addAttachmentURL(url, withAlternateFilename: nil) == false {
+        if messageVC.addAttachmentURL(url, withAlternateFilename: nil) {
           dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.presentViewController(messageVC, animated: true, completion: nil)
           })
