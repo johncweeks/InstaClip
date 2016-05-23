@@ -18,7 +18,7 @@ class PodcastMedia {
     
     private init() { // private prevents others from using the default initializer
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PodcastMedia.mediaLibraryDidChange(_:)), name: MPMediaLibraryDidChangeNotification, object: nil)
-        MPMediaLibrary.defaultMediaLibrary().beginGeneratingLibraryChangeNotifications()
+        MPMediaLibrary.defaultMediaLibrary().beginGeneratingLibraryChangeNotifications()      
     }
     
     @objc func mediaLibraryDidChange(notification: NSNotification) {

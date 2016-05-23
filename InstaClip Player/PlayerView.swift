@@ -12,95 +12,117 @@ import MediaPlayer
 
 
 class PlayerView: UITableViewCell {
-    
-    @IBOutlet weak var artWorkImageView: UIImageView!
-    @IBOutlet weak var frameView: UIView!
-    @IBOutlet weak var forwardButton: UIButton!
-    @IBOutlet weak var playPauseButton: UIButton!
-    @IBOutlet weak var reverseButton: UIButton!
-    @IBOutlet weak var timeProgressView: UIProgressView!
-
-    private var observers = false
-    private var kvoProgress = "progress"
-    private var kvoRate = "rate"
-    
-    var showMediaItem: MPMediaItem? {
-        didSet {
-            if showMediaItem == PlayerViewModel.sharedInstance.showMediaItem {
-                reverseButton.enabled=true
-                playPauseButton.enabled=true
-                forwardButton.enabled=true
-                addObservers()
-            } else {
-                removeObservers()
-            }
-        }
-    }
-    
-    //weak var delegate: PlayerViewModel?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        timeProgressView.progressTintColor = UIColor.blackColor()
-        frameView.layer.cornerRadius = 4
-        frameView.layer.masksToBounds = true
-        frameView.layer.borderWidth = 1
-        frameView.layer.borderColor = UIColor.darkGrayColor().CGColor
-    }
-        
-    deinit {
+  
+  @IBOutlet weak var artWorkImageView: UIImageView!
+  @IBOutlet weak var frameView: UIView!
+  @IBOutlet weak var forwardButton: UIButton!
+  @IBOutlet weak var playPauseButton: UIButton!
+  @IBOutlet weak var reverseButton: UIButton!
+  @IBOutlet weak var timeProgressView: UIProgressView!
+  @IBOutlet weak var scrubGestureView: UIView!
+  
+  private var observers = false
+  private var kvoProgress = "progress"
+  private var kvoRate = "rate"
+  
+  var showMediaItem: MPMediaItem? {
+    didSet {
+      if showMediaItem == PlayerViewModel.sharedInstance.showMediaItem {
+        reverseButton.enabled=true
+        playPauseButton.enabled=true
+        forwardButton.enabled=true
+        addObservers()
+      } else {
         removeObservers()
+      }
     }
+  }
+  
+  //weak var delegate: PlayerViewModel?
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+    timeProgressView.progressTintColor = UIColor.blackColor()
     
-    private func addObservers() {
-        if !observers {
-            PlayerViewModel.sharedInstance.addObserver(self, forKeyPath: kvoProgress, options: [.Initial, .New], context: &kvoProgress)
-            PlayerViewModel.sharedInstance.addObserver(self, forKeyPath: kvoRate, options: [.Initial, .New], context: &kvoRate)
-            observers = true
-        }
-    }
+    frameView.layer.cornerRadius = 4
+    frameView.layer.masksToBounds = true
+    frameView.layer.borderWidth = 1
+    frameView.layer.borderColor = UIColor.darkGrayColor().CGColor
     
-    private func removeObservers() {
-        if observers {
-            PlayerViewModel.sharedInstance.removeObserver(self, forKeyPath: kvoProgress)
-            PlayerViewModel.sharedInstance.removeObserver(self, forKeyPath: kvoRate)
-            observers = false
-        }
+    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+    addGestureRecognizer(panGestureRecognizer)
+  }
+  
+  deinit {
+    removeObservers()
+  }
+  
+  private func addObservers() {
+    if !observers {
+      PlayerViewModel.sharedInstance.addObserver(self, forKeyPath: kvoProgress, options: [.Initial, .New], context: &kvoProgress)
+      PlayerViewModel.sharedInstance.addObserver(self, forKeyPath: kvoRate, options: [.Initial, .New], context: &kvoRate)
+      observers = true
     }
-    
-    @IBAction func playPauseButtonPress(sender: UIButton) {
-        PlayerViewModel.sharedInstance.playPauseButtonPress()
+  }
+  
+  private func removeObservers() {
+    if observers {
+      PlayerViewModel.sharedInstance.removeObserver(self, forKeyPath: kvoProgress)
+      PlayerViewModel.sharedInstance.removeObserver(self, forKeyPath: kvoRate)
+      observers = false
     }
-    
-    @IBAction func reverseButtonPress(sender: UIButton) {
-        PlayerViewModel.sharedInstance.skipBackwardButtonPress()
+  }
+  
+  @IBAction func playPauseButtonPress(sender: UIButton) {
+    PlayerViewModel.sharedInstance.playPauseButtonPress()
+  }
+  
+  @IBAction func reverseButtonPress(sender: UIButton) {
+    PlayerViewModel.sharedInstance.skipBackwardButtonPress()
+  }
+  @IBAction func forwardButtonPress(sender: UIButton) {
+    PlayerViewModel.sharedInstance.skipForwardButtonPress()
+  }
+  
+  // MARK: - KVO
+  
+  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    //print(self)
+    if context == &kvoProgress {
+      if let newValue = change?["new"] as? Float {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          self.timeProgressView.setProgress(newValue, animated: false)
+        })
+      }
+    } else if context == &kvoRate {
+      if let newValue = change?["new"] as? Float {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+          if newValue == 0.0 {
+            self.playPauseButton.setImage(UIImage(named: "play"), forState: .Normal)
+          } else {
+            self.playPauseButton.setImage(UIImage(named: "pause"), forState: .Normal)
+          }
+        })
+      }
     }
-    @IBAction func forwardButtonPress(sender: UIButton) {
-        PlayerViewModel.sharedInstance.skipForwardButtonPress()
-    }
+  }
+  
+  @objc private func handlePanGesture(panGesture: UIPanGestureRecognizer) {
+    guard let avPlayer = PlayerModel.sharedInstance.player, currentItem = avPlayer.currentItem else { return }
 
-    // MARK: - KVO
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        //print(self)
-        if context == &kvoProgress {
-            if let newValue = change?["new"] as? Float {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.timeProgressView.setProgress(newValue, animated: false)
-                })
-            }
-        } else if context == &kvoRate {
-            if let newValue = change?["new"] as? Float {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if newValue == 0.0 {
-                        self.playPauseButton.setImage(UIImage(named: "play"), forState: .Normal)
-                    } else {
-                        self.playPauseButton.setImage(UIImage(named: "pause"), forState: .Normal)
-                    }
-                })
-            }
-        }
+    if panGesture.state == .Changed {
+      let location = panGesture.locationInView(scrubGestureView)
+      if location.x >= 0 && location.x <= CGRectGetWidth(scrubGestureView.frame) {
+        let newTime = CMTimeMakeWithSeconds(CMTimeGetSeconds(currentItem.duration)*Float64(location.x/CGRectGetWidth(scrubGestureView.frame)), currentItem.duration.timescale)
+        avPlayer.seekToTime(newTime)
+      } else if location.x < 0 {
+        let newTime = CMTimeMakeWithSeconds(0, currentItem.duration.timescale)
+        avPlayer.seekToTime(newTime)
+      } else if location.x > CGRectGetWidth(scrubGestureView.frame) {
+        avPlayer.seekToTime(currentItem.duration)
+      }
     }
-
+  }
+  
 }

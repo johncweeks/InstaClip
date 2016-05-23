@@ -169,6 +169,7 @@ extension ICSEView: ICSEViewProtocol {
       let emailAction = UIAlertAction(title: "email", style: .Default) { (alertAction) in
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
+        mailVC.setSubject("checkout this audio clip...")
         let fileName = url.lastPathComponent ?? "InstaClip.m4a"
         mailVC.addAttachmentData(data, mimeType: "audio/mp4", fileName: fileName)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
