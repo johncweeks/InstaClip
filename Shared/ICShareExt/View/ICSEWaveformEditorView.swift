@@ -76,13 +76,6 @@ class ICSEWaveformEditorView: UIView {
       case .waveform:
         var newBounds = panStartBounds
         newBounds.origin.x -= translation.x
-        
-        if newBounds.origin.x < 0 {
-          newBounds.origin.x = 0
-        }
-        if newBounds.origin.x > waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width {
-          newBounds.origin.x = waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width
-        }
         self.bounds = newBounds
       case .playhead:
         var playheadFrame = self.panPlayheadViewStartFrame
@@ -97,6 +90,18 @@ class ICSEWaveformEditorView: UIView {
         clipFrame.size.width -= translation.x
         clipFrame.origin.x += translation.x
         self.clipView.frame = clipFrame
+      }
+    }
+    else if panGesture.state == .Ended {
+      // scroll bounce
+      if self.bounds.origin.x < 0 {
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+          self.bounds.origin.x = 0
+          }, completion: nil)
+      } else if self.bounds.origin.x > waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width {
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: {
+          self.bounds.origin.x = self.waveformContentView.frame.size.width - UIScreen.mainScreen().bounds.size.width
+          }, completion: nil)
       }
     }
   }

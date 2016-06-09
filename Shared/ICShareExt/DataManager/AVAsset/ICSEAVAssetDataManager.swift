@@ -42,7 +42,7 @@ final class ICSEAVAssetDataManager: ICSEAVAssetDataManagerProtocolWithObserver {
     self.icShareExtConfiguration = configuration
     self.serialQueue = dispatch_queue_create("net.MoonriseSoftware.ICSEAVAssetDataManager.newClip", DISPATCH_QUEUE_SERIAL)
     let urlAsset = AVURLAsset(URL: nsURL, options: [AVURLAssetPreferPreciseDurationAndTimingKey: true])
-    urlAsset.loadValuesAsynchronouslyForKeys(["tracks"]) { () -> Void in
+    urlAsset.loadValuesAsynchronouslyForKeys(["tracks", "duration"]) { () -> Void in
       
       guard let audioAssetTrack = urlAsset.tracksWithMediaType(AVMediaTypeAudio).first else {
         self.interactor.dataManagerDidFailWithResult(.AssetDataManagerMissingAudioTrack, error: nil)

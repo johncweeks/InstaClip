@@ -32,7 +32,7 @@ class ICSEWaveformContentView: UIView {
     UIGraphicsPushContext(ctx)
     
     let rect = CGContextGetClipBoundingBox(ctx)
-    
+        
     self.superview?.backgroundColor?.setFill()
     UIRectFill(rect)
     
